@@ -23,19 +23,20 @@
    <persistence-unit name="MinimarketPersistenceUnit">
       <!-- If you are running in a production environment, add a managed
          data source, this configuration uses the JakartaEE default data source is just for development and testing! -->
-      <jta-data-source>java:comp/DefaultDataSource</jta-data-source>
+      <jta-data-source>java:jboss/datasources/ejPostgresDS</jta-data-source>
       <properties>
          <!--The database schema is auto created on deployment and dropped before redeploy.
              Note: the following configuration does not drop the tables on undeploy. If you prefer this, use this
              Hibernate property instead:
              <property name="hibernate.hbm2ddl.auto" value="create-drop" />
          -->
-         <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+         <property name="javax.persistence.schema-generation.database.action" value="update"/>
          <property name="javax.persistence.schema-generation.create-source" value="metadata"/>
          <property name="javax.persistence.schema-generation.drop-source" value="metadata"/>
 
          <!-- Properties for Hibernate -->
-         <property name="hibernate.show_sql" value="false" />
+         <property name="hibernate.show_sql" value="true" />
+         <property name="hibernate.format_sql" value="true" />
       </properties>
    </persistence-unit>
 </persistence>
