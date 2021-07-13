@@ -1,15 +1,13 @@
 package ec.edu.ups.Minimarket.modelo;
 
-public class Usuario {
+public class Proveedor {
 
 	private String cedula;
 	private String nombre;
 	private String apellido;
-	private String correo;
-	private String contrasenia;
+	private String compania;
 	private String direccion;
 	private String telefono;
-	private int rol;
 
 	public String getCedula() {
 		return cedula;
@@ -35,20 +33,12 @@ public class Usuario {
 		this.apellido = apellido;
 	}
 
-	public String getCorreo() {
-		return correo;
+	public String getCompania() {
+		return compania;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-
-	public String getContrasenia() {
-		return contrasenia;
-	}
-
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
+	public void setCompania(String compania) {
+		this.compania = compania;
 	}
 
 	public String getDireccion() {
@@ -65,14 +55,6 @@ public class Usuario {
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
-	}
-
-	public int getRol() {
-		return rol;
-	}
-
-	public void setRol(int rol) {
-		this.rol = rol;
 	}
 
 }
