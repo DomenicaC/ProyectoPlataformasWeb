@@ -7,37 +7,29 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Carrito {
+public class FacDetProv {
 
 	@Id
 	@GeneratedValue
-	private int codigo;
+	private int Codigo;
 	private String nombreProd;
 	private int cantidad;
-	private double precio;
-	private double total;
+	private int stock;
 
-	/**
-	 * Creacion de relacciones
-	 * */
 	@ManyToOne
 	@JoinColumn(name = "id_factura")
 	private Factura factura;
-	
-	/**
-	 * @Column(name = "FacDet_codDetProd") private int codigoDetProd=0;
-	 */
 
 	@ManyToOne
-	@JoinColumn(name = "Prod_codigo")
+	@JoinColumn(name = "Prod_Codigo")
 	private Producto productos;
 
 	public int getCodigo() {
-		return codigo;
+		return Codigo;
 	}
 
 	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+		Codigo = codigo;
 	}
 
 	public String getNombreProd() {
@@ -56,20 +48,12 @@ public class Carrito {
 		this.cantidad = cantidad;
 	}
 
-	public double getPrecio() {
-		return precio;
+	public int getStock() {
+		return stock;
 	}
 
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-
-	public double getTotal() {
-		return total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
+	public void setStock(int stock) {
+		this.stock = stock;
 	}
 
 	public Factura getFactura() {

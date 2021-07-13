@@ -1,7 +1,16 @@
 package ec.edu.ups.Minimarket.modelo;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Proveedor {
 
+	@Id
 	private String cedula;
 	private String nombre;
 	private String apellido;
@@ -9,6 +18,13 @@ public class Proveedor {
 	private String direccion;
 	private String telefono;
 
+	/**
+	 * Creacion de relacciones
+	 * */
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<FacProv> facProv;
+	
+	
 	public String getCedula() {
 		return cedula;
 	}

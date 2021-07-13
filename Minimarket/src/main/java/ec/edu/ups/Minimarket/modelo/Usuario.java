@@ -1,7 +1,17 @@
 package ec.edu.ups.Minimarket.modelo;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Usuario {
 
+	@Id
 	private String cedula;
 	private String nombre;
 	private String apellido;
@@ -11,6 +21,18 @@ public class Usuario {
 	private String telefono;
 	private int rol;
 
+	/**
+	 * Creacion de relacciones
+	 */
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Factura> facturas;
+
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<FacProv> factProv;
+
+	/**
+	 * Generar getters and setters
+	 */
 	public String getCedula() {
 		return cedula;
 	}
@@ -73,6 +95,22 @@ public class Usuario {
 
 	public void setRol(int rol) {
 		this.rol = rol;
+	}
+
+	public List<Factura> getFacturas() {
+		return facturas;
+	}
+
+	public void setFacturas(List<Factura> facturas) {
+		this.facturas = facturas;
+	}
+
+	public List<FacProv> getFactProv() {
+		return factProv;
+	}
+
+	public void setFactProv(List<FacProv> factProv) {
+		this.factProv = factProv;
 	}
 
 }

@@ -1,13 +1,38 @@
 package ec.edu.ups.Minimarket.modelo;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Factura {
 
+	@Id
 	private String ruc;
 	private String fecha;
 	private double subtotal;
 	private double iva;
 	private double total;
-
+	
+	/**
+	 * Creacion de relacciones
+	 * */
+	@OneToOne
+	@JoinColumn(name = "cli_cedula")
+	private Usuario usuario;
+	
+	@OneToMany(mappedBy = "factura", cascade = CascadeType.ALL)
+	private List<Carrito> carritos;
+	
+	/**
+	 * Generar getters and setters
+	 * */
 	public String getRuc() {
 		return ruc;
 	}
@@ -46,6 +71,14 @@ public class Factura {
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }
