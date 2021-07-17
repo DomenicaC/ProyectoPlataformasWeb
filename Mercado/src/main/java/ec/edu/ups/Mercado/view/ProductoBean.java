@@ -53,12 +53,6 @@ public class ProductoBean {
 		return "lista-producto?faces-redirect=true";
 	}
 	
-	public int doLoadCategoria() {
-		
-		int codigo = newProducto.getCategorias().getCodigo();
-		
-		//Categorias c = onProducto.ge
-		
-	}
+	
 	
 }
