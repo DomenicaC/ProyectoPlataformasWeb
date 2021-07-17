@@ -16,10 +16,10 @@ public class CategoriasBean {
 
 	private Categorias newCategoria = new Categorias();
 	private List<Categorias> categorias;
-	
+
 	@Inject
 	private CategoriasON onCategorias;
-	
+
 	@PostConstruct
 	public void init() {
 		categorias = onCategorias.getCategorias();
@@ -30,7 +30,7 @@ public class CategoriasBean {
 		return newCategoria;
 	}
 
-	public void setNewCategorias(Categorias newCategoria) {
+	public void setNewCategoria(Categorias newCategoria) {
 		this.newCategoria = newCategoria;
 	}
 
@@ -41,15 +41,12 @@ public class CategoriasBean {
 	public void setCategorias(List<Categorias> usuarios) {
 		this.categorias = usuarios;
 	}
-	
-	public String guardarUsuario() {
-		try {
-			onCategorias.insertarCategoriaso(newCategoria);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+	public String guardarCategoria() {
+
+		onCategorias.insertarCategoriaso(newCategoria);
+
 		return "lista-categoria?faces-redirect=true";
 	}
-	
+
 }
