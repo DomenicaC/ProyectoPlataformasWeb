@@ -14,7 +14,7 @@ import ec.edu.ups.Mercado.modelo.Usuario;
 @RequestScoped
 public class UsuarioBean {
 
-	private Usuario newUsuario = new Usuario();
+	private Usuario newUsuario;
 	private List<Usuario> usuarios;
 	
 	@Inject
@@ -22,6 +22,7 @@ public class UsuarioBean {
 	
 	@PostConstruct
 	public void init() {
+		newUsuario = new Usuario();
 		usuarios = onUsuario.getUsuarios();
 		System.out.println(usuarios);
 	}
@@ -46,7 +47,7 @@ public class UsuarioBean {
 		try {
 			onUsuario.insertarUsuario(newUsuario);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		return "lista-usuario?faces-redirect=true";

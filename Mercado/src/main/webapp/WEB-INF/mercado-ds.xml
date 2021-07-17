@@ -21,7 +21,7 @@
                     <driver>postgresql-driver</driver>
                     <security>
                         <user-name>postgres</user-name>
-                        <password>admin</password>
+                        <password>byron</password>
                     </security>
                 </datasource>
     
