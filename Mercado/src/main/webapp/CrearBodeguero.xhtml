@@ -6,7 +6,7 @@
 
 <ui:composition template="/template.xhtml">
 	<ui:define name="title">
-       Registro Administrador 
+       Ingresar Bodegero 
     </ui:define>
 	<ui:define name="contenido">
 		<h:form class="form-horizontal">
@@ -14,7 +14,7 @@
 			<div class="card-body">
 				<div class="form-group row">
 					<label for="txtCedula" class="col-sm-2 col-form-label">Cedula
-						Administrador:</label>
+						Bodegero:</label>
 					<div class="col-sm-10">
 						<input value="#{usuarioBean.newUsuario.cedula}"
 							class="form-control" id="txtCedula"
@@ -25,7 +25,7 @@
 			<div class="card-body">
 				<div class="form-group row">
 					<label for="txtNombre" class="col-sm-2 col-form-label">Nombre
-						Administrador:</label>
+						Bodegero:</label>
 					<div class="col-sm-10">
 						<input value="#{usuarioBean.newUsuario.nombre}"
 							class="form-control" id="txtNombre"
@@ -37,7 +37,7 @@
 			<div class="card-body">
 				<div class="form-group row">
 					<label for="txtApe" class="col-sm-2 col-form-label">Apellido
-						Administrador:</label>
+						Bodegero:</label>
 					<div class="col-sm-10">
 						<input value="#{usuarioBean.newUsuario.apellido}"
 							class="form-control" id="txtApe"
@@ -70,7 +70,7 @@
 					<div class="col-sm-10">
 						<input value="#{usuarioBean.newUsuario.correo}"
 							class="form-control" id="txtCorreo"
-							placeholder="alguien@admin.mini.com" />
+							placeholder="alguien@bode.mini.com" />
 					</div>
 				</div>
 
@@ -91,11 +91,9 @@
 					<div class="col-sm-10">
 						<h:inputText value="#{usuarioBean.newUsuario.rol}"
 							class="form-control" id="txtRol" placeholder="Ingrese su rol" />
-					</div>
+					</div> 
 
 				</div>
-
-
 
 			</div>
 			<!-- /.card-body -->
