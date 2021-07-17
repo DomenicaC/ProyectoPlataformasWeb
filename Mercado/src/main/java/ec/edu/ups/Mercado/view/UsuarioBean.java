@@ -20,6 +20,10 @@ public class UsuarioBean {
 	@Inject
 	private UsuariosON onUsuario;
 	
+	private String contrasenia;
+	private String usuario;
+	
+	
 	@PostConstruct
 	public void init() {
 		newUsuario = new Usuario();
@@ -51,6 +55,51 @@ public class UsuarioBean {
 			e.printStackTrace();
 		}
 		return "lista-usuario?faces-redirect=true";
+	}
+	
+	
+	
+	
+	
+	
+	/*
+	 * Controlador del inicio de sesion
+	 */
+	
+	public String getContrasenia() {
+		return contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String controladorLoggin() {
+		
+		if(usuario.contains("@admin.mini.com")) {
+			
+			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
+			return null;//poner el link de la pantalla principal de admin
+			
+		}else if(usuario.contains("@bode.mini.com")) {
+			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
+			return null;//poner el link de la pantalla principal de el bodeguero
+			
+		}else if(usuario.contains("@mini.com")){
+			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
+			return null;//poner el link de la pantalla principal del usuario
+			
+		}else {
+			return null;
+		}
 	}
 	
 }

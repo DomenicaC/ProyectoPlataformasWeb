@@ -32,4 +32,8 @@ public class UsuariosON {
 		return daousuario.getUsuarios("%");
 	}
 
+	public Usuario getUsuarioLoggin(String usuario,String contra) {
+		
+		return daousuario.getLoggin(usuario, contra);
+	}
 }
