@@ -6,7 +6,7 @@
 
 <ui:composition template="template.xhtml">
 	<ui:define name="title">
-       Ingresar Administrador 
+       Ingresar Proveedor 
     </ui:define>
 	<ui:define name="contenido">
 		<h:form class="form-horizontal">
@@ -14,32 +14,30 @@
 			<div class="card-body">
 				<div class="form-group row">
 					<label for="txtCedula" class="col-sm-2 col-form-label">Cedula
-						Administrador:</label>
+						Proveedor:</label>
 					<div class="col-sm-10">
-						<input value="#{usuarioBean.newUsuario.cedula}"
+						<input value="#{proveedorBean.newProveedor.cedula}"
 							class="form-control" id="txtCedula"
 							placeholder="Ingrese la cedula" />
 					</div>
 				</div>
-			</div>
-			<div class="card-body">
+
 				<div class="form-group row">
 					<label for="txtNombre" class="col-sm-2 col-form-label">Nombre
-						Administrador:</label>
+						Proveedor:</label>
 					<div class="col-sm-10">
-						<input value="#{usuarioBean.newUsuario.nombre}"
+						<input value="#{proveedorBean.newProveedor.nombre}"
 							class="form-control" id="txtNombre"
 							placeholder="Ingrese el nombre" />
 					</div>
 				</div>
-			</div>
 
-			<div class="card-body">
+
 				<div class="form-group row">
 					<label for="txtApe" class="col-sm-2 col-form-label">Apellido
-						Administrador:</label>
+						Proveedor:</label>
 					<div class="col-sm-10">
-						<input value="#{usuarioBean.newUsuario.apellido}"
+						<input value="#{proveedorBean.newProveedor.apellido}"
 							class="form-control" id="txtApe"
 							placeholder="Ingrese el apellido" />
 					</div>
@@ -48,9 +46,9 @@
 				<div class="form-group row">
 					<label for="txtDir" class="col-sm-2 col-form-label">Direccion:</label>
 					<div class="col-sm-10">
-						<input value="#{usuarioBean.newUsuario.direccion}"
+						<input value="#{proveedorBean.newProveedor.direccion}"
 							class="form-control" id="txtDir"
-							placeholder="Ingrese su direccion" />
+							placeholder="Ingrese la direccion" />
 					</div>
 
 				</div>
@@ -58,46 +56,24 @@
 				<div class="form-group row">
 					<label for="txtTel" class="col-sm-2 col-form-label">Telefono:</label>
 					<div class="col-sm-10">
-						<input value="#{usuarioBean.newUsuario.telefono}"
-							class="form-control" id="txtTel" placeholder="Ingrese su telefono" />
+						<input value="#{proveedorBean.newProveedor.telefono}"
+							class="form-control" id="txtTel"
+							placeholder="Ingrese su telefono" />
 					</div>
 
 				</div>
 
 				<div class="form-group row">
-					<label for="txtCorreo" class="col-sm-2 col-form-label">Correo
-						Electronico:</label>
+					<label for="txtCom" class="col-sm-2 col-form-label">Compañia:</label>
 					<div class="col-sm-10">
-						<input value="#{usuarioBean.newUsuario.correo}"
-							class="form-control" id="txtCorreo"
-							placeholder="alguien@admin.mini.com" />
+						<input value="#{proveedorBean.newProveedor.compania}"
+							class="form-control" id="txtCom"
+							placeholder="Ingrese el nombre de la compañia" />
 					</div>
 				</div>
-
-				<div class="form-group row">
-					<label for="txtContra" class="col-sm-2 col-form-label">Contraseña:</label>
-					<div class="col-sm-10">
-						<input value="#{usuarioBean.newUsuario.contrasenia}"
-							class="form-control" id="txtContra"
-							placeholder="Ingrese la contraseña" />
-					</div>
-
-				</div>
-
-
-
-				<div class="form-group row">
-					<label for="txtRol" class="col-sm-2 col-form-label">Rol:</label>
-					<div class="col-sm-10">
-						<h:inputText value="#{usuarioBean.newUsuario.rol}"
-							class="form-control" id="txtRol" placeholder="Ingrese su rol" />
-					</div>
-
-				</div>
-
-
 
 			</div>
+
 			<!-- /.card-body -->
 			<div class="card-footer">
 				<h:commandButton type="submit" class="btn btn-info"
