@@ -17,10 +17,10 @@ public class ProductoBean {
 
 	private Producto newProducto = new Producto();
 	private List<Producto> prods;
-	
+
 	@Inject
 	private ProductosON onProducto;
-	
+
 	@PostConstruct
 	public void init() {
 		prods = onProducto.getProductos();
@@ -42,7 +42,7 @@ public class ProductoBean {
 	public void setUsuarios(List<Producto> prods) {
 		this.prods = prods;
 	}
-	
+
 	public String guardarProducto() {
 		try {
 			onProducto.insertarProducto(newProducto);
@@ -52,7 +52,16 @@ public class ProductoBean {
 		}
 		return "lista-producto?faces-redirect=true";
 	}
-	
-	
-	
+
+	public int doLoadCategoria() {
+
+		int codigo = newProducto.getCategorias().getCodigo();
+
+		Categorias c = onProducto.getCategoria(codigo);
+		newProducto.setCategorias(c);
+
+		return 0;
+
+	}
+
 }
