@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import ec.edu.ups.Mercado.bussines.ProductosON;
+import ec.edu.ups.Mercado.modelo.Categorias;
 import ec.edu.ups.Mercado.modelo.Producto;
 
 @Named
@@ -30,7 +31,7 @@ public class ProductoBean {
 		return newProducto;
 	}
 
-	public void setNewUsuario(Producto newProducto) {
+	public void setNewProducto(Producto newProducto) {
 		this.newProducto = newProducto;
 	}
 
@@ -50,6 +51,14 @@ public class ProductoBean {
 			e.printStackTrace();
 		}
 		return "lista-producto?faces-redirect=true";
+	}
+	
+	public int doLoadCategoria() {
+		
+		int codigo = newProducto.getCategorias().getCodigo();
+		
+		//Categorias c = onProducto.ge
+		
 	}
 	
 }

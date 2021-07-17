@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="template.xhtml">
+	<ui:define name="title">
+       Ingresar Nuevos Productos 
+    </ui:define>
+	<ui:define name="contenido">
+		<h:form class="form-horizontal">
+
+			<div class="card-body">
+				<div class="form-group row">
+					<label for="txtNombre" class="col-sm-2 col-form-label">Nombre
+						Producto:</label>
+					<div class="col-sm-10">
+						<input value="#{productoBean.newProducto.nombre}"
+							class="form-control" id="txtNombre"
+							placeholder="Ingrese la nombre del producto" />
+					</div>
+				</div>
+			</div>
+
+			<div class="card-body">
+				<div class="form-group row">
+					<label for="txtPre" class="col-sm-2 col-form-label">Precio
+						Producto:</label>
+					<div class="col-sm-10">
+						<input value="#{productoBean.newProducto.precioU}"
+							class="form-control" id="txtPre"
+							placeholder="Ingrese el precio '0.00'" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="txtSto" class="col-sm-2 col-form-label">Stock
+						Producto:</label>
+					<div class="col-sm-10">
+						<input value="#{productoBean.newProducto.stock}"
+							class="form-control" id="txtSto"
+							placeholder="Ingrese el Stock del producto" />
+					</div>
+
+				</div>
+
+				<div class="form-group row">
+					<label for="txtDes" class="col-sm-2 col-form-label">Descripcion
+						Producto:</label>
+					<div class="col-sm-10">
+						<input value="#{productoBean.newProducto.descripcion}"
+							class="form-control" id="txtDes"
+							placeholder="Ingrese la descripcion del producto" />
+					</div>
+
+				</div>
+
+				<div class="form-group row">
+					<label for="txtImg" class="col-sm-2 col-form-label">URL
+						imagen:</label>
+					<div class="col-sm-10">
+						<input value="#{productoBean.newProducto.urlImg}"
+							class="form-control" id="txtImg"
+							placeholder="Ingrese la URL de la imagen" />
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="txtCat" class="col-sm-2 col-form-label">Id
+						Categoria:</label>
+					<div class="col-sm-10">
+						<input value="#{productoBean.newProducto.categorias}"
+							class="form-control" id="txtCat"
+							placeholder="Ingrese el Id de la categoria" />
+					</div>
+
+				</div>
+
+				<div class="form-group row">
+					<label for="txtNom" class="col-sm-2 col-form-label">Nombre
+						Categoria:</label>
+					<div class="col-sm-10">
+						<input value="#{productoBean.newProducto.categorias}"
+							class="form-control" id="txtNom"
+							placeholder="Nombre de la categoria" />
+					</div>
+
+				</div>
+
+			</div>
+			<!-- /.card-body -->
+			<div class="card-footer">
+				<h:commandButton type="submit" class="btn btn-info"
+					action="##{productoBean.guardarProducto()}" value="Crear" />
+				<button type="submit" class="btn btn-default float-right">Cancelar</button>
+			</div>
+			<!-- /.card-footer -->
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
