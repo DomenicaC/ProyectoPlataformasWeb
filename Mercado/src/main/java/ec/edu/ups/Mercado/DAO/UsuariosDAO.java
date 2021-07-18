@@ -50,7 +50,7 @@ public class UsuariosDAO {
 	
 	public Usuario getLoggin(String usuario, String contra) {
 		String jpq3="SELECT c FROM Usuario c"
-				+ " WHERE correo like ?1 AND contrasenia like ?2";
+				+ " WHERE correo = ?1 AND contrasenia = ?2";
 		
 		Query query=em.createQuery(jpq3,Usuario.class);
 		query.setParameter(1, usuario);

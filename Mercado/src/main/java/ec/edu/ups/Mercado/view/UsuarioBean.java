@@ -29,6 +29,8 @@ public class UsuarioBean {
 		newUsuario = new Usuario();
 		usuarios = onUsuario.getUsuarios();
 		System.out.println(usuarios);
+		/*contrasenia = "0";
+		usuario = "0";*/
 	}
 
 	public Usuario getNewUsuario() {
@@ -83,15 +85,17 @@ public class UsuarioBean {
 	}
 
 	public String controladorLoggin() {
-		
+		System.out.println("Login");
 		if(usuario.contains("@admin.mini.com")) {
 			
 			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
-			return null;//poner el link de la pantalla principal de admin
+			System.out.println("Ingreso admin");
+			return "./Administrador/template.xhtml";//poner el link de la pantalla principal de admin
 			
 		}else if(usuario.contains("@bode.mini.com")) {
 			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
-			return null;//poner el link de la pantalla principal de el bodeguero
+			System.out.println("Ingreso bodeguero");
+			return "http://localhost:8080/Mercado/faces/Bodeguero/MenuBodeguero.xhtml";//poner el link de la pantalla principal de el bodeguero
 			
 		}else if(usuario.contains("@mini.com")){
 			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);

@@ -31,12 +31,11 @@
 			<div class="card-body">
 				<p class="login-box-msg">Inicie Sesión</p>
 
-				<form
-					action="http://localhost:8080/Mercado/faces/Administrador/template.xhtml"
-					method="post">
+				<h:form class="form-horizontal">
 					<label for="txtCedula" class="">Ingrese su correo:</label>
 					<div class="input-group mb-3">
-						<h:inputText type="email" class="form-control" placeholder="Email" />
+						<h:inputText value="#{usuarioBean.usuario}" type="email"
+							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-envelope"></span>
@@ -46,8 +45,8 @@
 					<label for="txtCedula" class="col-sm-20 col-form-label">Ingrese
 						su contraseña:</label>
 					<div class="input-group mb-3">
-						<h:inputText type="password" class="form-control"
-							placeholder="Password" />
+						<h:inputText value="#{usuarioBean.contrasenia}" type="password"
+							class="form-control" placeholder="Password" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-lock"></span>
@@ -65,8 +64,8 @@
 						</div>
 						<!-- /.col -->
 					</div>
-				</form>
 
+				</h:form>
 
 				<!-- /.social-auth-links -->
 
