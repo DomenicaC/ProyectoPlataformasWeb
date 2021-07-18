@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Minimarket | Inicio Sesión</title>
+
+	<!-- Google Font: Source Sans Pro -->
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet"
+		href="./../template/plugins/fontawesome-free/css/all.min.css" />
+	<!-- icheck bootstrap -->
+	<link rel="stylesheet"
+		href="./../template/plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+	<!-- Theme style -->
+	<link rel="stylesheet" href="./../template/dist/css/adminlte.min.css" />
+</h:head>
+<body class="login-page" style="min-height: 466px;">
+	<div class="login-box">
+		<!-- /.login-logo -->
+		<div class="card card-outline card-primary">
+			<div class="card-header text-center">
+				<a href="#" class="h1"><b>Minimarket</b><br /> Don Naza</a>
+			</div>
+			<div class="card-body">
+				<p class="login-box-msg">Inicie Sesión</p>
+
+				<form
+					action="http://localhost:8080/Mercado/faces/Administrador/template.xhtml"
+					method="post">
+					<label for="txtCedula" class="">Ingrese su correo:</label>
+					<div class="input-group mb-3">
+						<h:inputText type="email" class="form-control" placeholder="Email" />
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-envelope"></span>
+							</div>
+						</div>
+					</div>
+					<label for="txtCedula" class="col-sm-20 col-form-label">Ingrese
+						su contraseña:</label>
+					<div class="input-group mb-3">
+						<h:inputText type="password" class="form-control"
+							placeholder="Password" />
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-8">
+							<div class="icheck-primary"></div>
+						</div>
+						<!-- /.col -->
+						<div class="col-4">
+							<h:commandButton type="submit" class="btn btn-primary btn-block"
+								action="#{usuarioBean.controladorLoggin()}" value="Ingresar"></h:commandButton>
+						</div>
+						<!-- /.col -->
+					</div>
+				</form>
+
+
+				<!-- /.social-auth-links -->
+
+				<p class="mb-1">
+					<a href="forgot-password.html">Olvide mi contraseña </a>
+				</p>
+				<p class="mb-0">
+					<a href="register.html" class="text-center">Registrarse</a>
+				</p>
+			</div>
+			<!-- /.card-body -->
+		</div>
+		<!-- /.card -->
+	</div>
+	<!-- /.login-box -->
+
+	<!-- jQuery -->
+	<script src="./../template/plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap 4 -->
+	<script
+		src="./../template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- AdminLTE App -->
+	<script src="./../template/dist/js/adminlte.min.js"></script>
+
+
+</body>
+</html>
