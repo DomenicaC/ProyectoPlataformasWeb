@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="MenuBodeguero.xhtml">
+
+	<ui:define name="title">Ingresar Factura del proveedor</ui:define>
+
+	<ui:define name="contenido">
+		<h:form class="form-horizontal">
+			<!-- Datos de informacion de los usuarios -->
+			<div class="row">
+				<!-- Datos del usuario proveedor  -->
+				<div class="col-md-6">
+
+					<h:form>
+						<div class="card card-primary">
+							<div class="card-header">
+								<h3 class="card-title">Datos Proveedor</h3>
+							</div>
+							<!-- /.card-header -->
+							<!-- form start -->
+							<div class="card-body">
+								<div class="form-group">
+									<label for="txtCedP">Cedula Proveedor</label>
+									<h:inputText type="text" class="form-control" id="txtCedP"
+										placeholder="Ingrese la cedula del proveedor" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtNomP">Nombre Proveedor</label>
+									<h:inputText type="text" class="form-control" id="txtNomP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtApeP">Apellido Proveedor</label>
+									<h:inputText type="text" class="form-control" id="txtApeP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtComP">Compañia Proveedor</label>
+									<h:inputText type="text" class="form-control" id="txtComP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtDirP">Direccion Proveedor</label>
+									<h:inputText type="text" class="form-control" id="txtDirP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtApeP">Telefono Proveedor</label>
+									<h:inputText type="text" class="form-control" id="txtTelP"
+										placeholder="Password" />
+								</div>
+
+							</div>
+						</div>
+					</h:form>
+				</div>
+
+				<!-- Datos del usuario bodeguero que ingresa la fatura -->
+
+				<div class="col-md-6">
+
+					<h:form>
+						<div class="card card-success">
+							<div class="card-header">
+								<h3 class="card-title">Datos Bodeguero</h3>
+							</div>
+							<!-- /.card-header -->
+							<!-- form start -->
+							<div class="card-body">
+								<div class="form-group">
+									<label for="txtCedP">Cedula Bodeguero</label>
+									<h:inputText type="text" class="form-control" id="txtCedP"
+										placeholder="Ingrese la cedula del proveedor" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtNomP">Nombre Bodeguero</label>
+									<h:inputText type="text" class="form-control" id="txtNomP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtApeP">Apellido Bodeguero</label>
+									<h:inputText type="text" class="form-control" id="txtApeP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtComP">Compañia Bodeguero</label>
+									<h:inputText type="text" class="form-control" id="txtComP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtDirP">Direccion Bodeguero</label>
+									<h:inputText type="text" class="form-control" id="txtDirP"
+										placeholder="Password" />
+								</div>
+
+								<div class="form-group">
+									<label for="txtApeP">Telefono Bodeguero</label>
+									<h:inputText type="text" class="form-control" id="txtTelP"
+										placeholder="Password" />
+								</div>
+
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+
+			<!-- Tabla de los productos -->
+
+			<h:panelGrid columns="2">
+
+				<h:outputText value="Productos" />
+				<h:dataTable value="#{facturaBean.newFactura.detalles}"
+					class="table table-striped" var="detalle" id="tblDetalles">
+
+					<h:column>
+						<f:facet name="header">Codigo Producto</f:facet>
+						<h:inputText>
+							<f:ajax execute="@this"
+								listener="#{facturaBean.doLoadProducto()}"
+								render="txtCantidad txtProducto txtPrecio txtTotal txtTotalPagar txtIva"
+								event="blur" />
+						</h:inputText>
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Nombre Producto</f:facet>
+						<h:inputText value="#{detalle.producto}" id="txtProducto" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Cantidad</f:facet>
+						<h:inputText value="#{detalle.cantidad}" id="txtCantidad">
+							<f:ajax execute="@this" render="txtTotal txtIva txtTotalPagar" />
+						</h:inputText>
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Precio Unitario</f:facet>
+						<h:inputText value="#{detalle.precio}" id="txtPrecio" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Stock</f:facet>
+						<h:inputText value="#{detalle.total}" id="txtStock" />
+					</h:column>
+
+					<h:column>
+						<f:facet name="header">Total</f:facet>
+						<h:inputText value="#{detalle.total}" id="txtTotal" />
+					</h:column>
+
+				</h:dataTable>
+
+
+				<h:commandButton action="#{facturaBean.doGuardarFactura()}"
+					class="btn btn-info" value="Guardar" />
+
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+
+</html>
