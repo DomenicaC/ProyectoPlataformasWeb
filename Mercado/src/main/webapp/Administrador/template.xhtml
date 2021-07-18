@@ -199,8 +199,69 @@
 					<ul class="nav nav-pills nav-sidebar flex-column"
 						data-widget="treeview" role="menu" data-accordion="false">
 						<!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+               with font-awesome or any other icon font library 
+               Navegacion resultados crear usuarios-->
+						<li class="nav-item"><a href="#" class="nav-link"> <i
+								class="nav-icon fas fa-tachometer-alt"></i>
+								<p>
+									Crear Usuario <i class="right fas fa-angle-left"></i>
+								</p>
+						</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item"><a href="CrearAdmin.xhtml"
+									class="nav-link"> <i class="far fa-circle nav-icon"></i>
+										<p>Crear nuevo administrador</p>
+								</a></li>
 
+								<li class="nav-item"><a href="CrearBodeguero.xhtml"
+									class="nav-link"> <i class="far fa-circle nav-icon"></i>
+										<p>Crear nuevo bodeguero</p>
+								</a></li>
+
+								<li class="nav-item"><a href="CrearProveedor.xhtml"
+									class="nav-link"> <i class="far fa-circle nav-icon"></i>
+										<p>Crear nuevo proveedor</p>
+								</a></li>
+
+							</ul></li>
+
+						<li class="nav-item"><a href="#" class="nav-link"> <i
+								class="nav-icon fas fa-tachometer-alt"></i>
+								<p>
+									Productos <i class="right fas fa-angle-left"></i>
+								</p>
+						</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item"><a href="CrearProd.xhtml"
+									class="nav-link"> <i class="far fa-circle nav-icon"></i>
+										<p>Crear nuevo producto</p>
+								</a></li>
+
+								<li class="nav-item"><a href="CrearCategoria.xhtml"
+									class="nav-link"> <i class="far fa-circle nav-icon"></i>
+										<p>Crear nueva categoria</p>
+								</a></li>
+
+							</ul></li>
+
+						<li class="nav-item"><a href="#" class="nav-link"> <i
+								class="nav-icon fas fa-tachometer-alt"></i>
+								<p>
+									reportes <i class="right fas fa-angle-left"></i>
+								</p>
+						</a>
+							<ul class="nav nav-treeview">
+								<li class="nav-item"><a href="../../index.html"
+									class="nav-link"> <i class="far fa-circle nav-icon"></i>
+										<p>Reporte filtrado por categorias</p>
+								</a></li>
+
+								<li class="nav-item"><a href="../../index2.html"
+									class="nav-link"> <i class="far fa-circle nav-icon"></i>
+										<p>Reporte filtrado por fechas</p>
+								</a></li>
+
+							</ul></li>
 					</ul>
 				</nav>
 				<!-- /.sidebar-menu -->
@@ -221,7 +282,7 @@
 						</div>
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item"><a href="http://localhost:8080/Mercado/faces/Administrador/template.xhtml">Inicio</a></li>
 								<li class="breadcrumb-item active"><ui:insert name="title" /></li>
 							</ol>
 						</div>
@@ -250,8 +311,33 @@
 						</div>
 					</div>
 					<div class="card-body">
+						
+
 						<ui:insert name="contenido">
-							<span>Página en construcción</span>
+						<div class="container-fluid">
+							<div class="row">
+
+								<div class="col-md-6">
+
+									<div class="image">
+										<img src="./../template/dist/img/cuadro.png"
+											class=" elevation-2" alt="User Image" />
+									</div>
+
+								</div>
+
+								<div class="col-md-6">
+
+									<div class="image">
+										<img src="./../template/dist/img/circulo1.png"
+											class="elevation-2" alt="User Image" width="600xp" />
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+							<span><br />Página en construcción</span>
 						</ui:insert>
 					</div>
 					<!-- /.card-body -->
