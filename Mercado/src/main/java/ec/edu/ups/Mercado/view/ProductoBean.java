@@ -25,6 +25,8 @@ public class ProductoBean {
 	public void init() {
 		prods = onProducto.getProductos();
 		System.out.println(prods);
+		newProducto = new Producto();
+		newProducto.setCategorias(new Categorias());
 	}
 
 	public Producto getNewProducto() {
