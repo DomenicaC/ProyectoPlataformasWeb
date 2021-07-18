@@ -117,6 +117,14 @@
 					</h:form>
 				</div>
 			</div>
+			
+			<div class="card-footer">
+				<h:outputText value="" />
+				<h:commandButton action="#{facturaBean.addDetalle()}"
+					value="+ Agregar" class="btn btn-info">
+					<f:ajax render="tblDetalles" execute="tblDetalles" />
+				</h:commandButton>
+			</div>
 
 			<!-- Tabla de los productos -->
 
