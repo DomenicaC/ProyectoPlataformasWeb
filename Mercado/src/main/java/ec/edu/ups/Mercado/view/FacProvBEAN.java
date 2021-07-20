@@ -78,7 +78,7 @@ public class FacProvBEAN implements Serializable {
 
 		FacDetProv d = new FacDetProv();
 		d.setCodigoProducto(codigo);
-		d.setCantidad(1);
+		d.setCantidad(0);
 		d.setNombreProd(p.getNombre());
 		d.setStock(p.getStock());
 		lista.add(d);

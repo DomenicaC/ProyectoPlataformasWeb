@@ -7,6 +7,7 @@ import ec.edu.ups.Mercado.DAO.FacProvDAO;
 import ec.edu.ups.Mercado.DAO.ProductoDAO;
 import ec.edu.ups.Mercado.DAO.ProveedorDAO;
 import ec.edu.ups.Mercado.DAO.UsuariosDAO;
+import ec.edu.ups.Mercado.modelo.FacDetProv;
 import ec.edu.ups.Mercado.modelo.FacProv;
 import ec.edu.ups.Mercado.modelo.Producto;
 import ec.edu.ups.Mercado.modelo.Proveedor;
@@ -32,9 +33,17 @@ public class FacProvON {
 		Proveedor p = daoProv.read(facProv.getProv().getCedula());
 
 		Usuario b = daoUsuario.read(facProv.getBode().getCedula());
-		/*
-		 * if(p == null) { //daoProv.insert(facProv.getProv()); }else { daoProv }
-		 */
+
+		FacDetProv deta = new FacDetProv();
+		Producto pr = daoProd.find(deta.getProductos().getCodigo());
+		System.out.println(pr+ "pr");
+
+		if (pr == null) {
+			//daoProv.insert(facProv.getProv());
+			System.out.println("Producto no encontrado");
+		} else {
+			daoProd.update(deta.getProductos());
+		}
 
 		daoFactProv.insert(facProv);
 

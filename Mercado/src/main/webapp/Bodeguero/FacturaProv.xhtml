@@ -161,7 +161,7 @@
 					<h:column>
 						<f:facet name="header">Cantidad</f:facet>
 						<h:inputText value="#{detalle.cantidad}" id="txtCantidad">
-
+						<f:ajax execute="@this" render="txtStock"/>
 						</h:inputText>
 					</h:column>
 
@@ -178,7 +178,9 @@
 
 			</h:panelGrid>
 		</h:form>
-
+		<h:outputLabel value="Total de la factura:" />
+		<h:inputText value="#{facProvBEAN.newFacProv.totalFactura}"
+			id="txtTotalPagar" />
 	</ui:define>
 
 </ui:composition>
