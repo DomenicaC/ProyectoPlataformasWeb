@@ -28,6 +28,7 @@ public class FacProvBEAN implements Serializable{
 
 		newFacProv = new FacProv();
 		newFacProv.setProv(new Proveedor());
+		newFacProv.setBode(new Usuario());
 		newFacProv.addDetalle(new FacDetProv());
 
 	}

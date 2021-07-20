@@ -30,6 +30,8 @@ public class FacProvON {
 	public void guardarFacProv(FacProv facProv) {
 
 		Proveedor p = daoProv.read(facProv.getProv().getCedula());
+		
+		Usuario b = daoUsuario.read(facProv.getBode().getCedula());
 		/*
 		 * if(p == null) { //daoProv.insert(facProv.getProv()); }else { daoProv }
 		 */
@@ -44,8 +46,8 @@ public class FacProvON {
 	}
 	
 	public Usuario getBode(String cedula) {
-		Usuario p = daoUsuario.read(cedula);
-		return p;
+		Usuario b = daoUsuario.read(cedula);
+		return b;
 	}
 
 	public Producto getProducto(int codigo) {

@@ -89,7 +89,10 @@
 									<label for="txtCedB">Cedula Bodeguero</label>
 									<h:inputText value="#{facProvBEAN.newFacProv.bode.cedula}"
 										type="text" class="form-control" id="txtCedB"
-										placeholder="Ingrese la cedula del proveedor" />
+										placeholder="Ingrese la cedula del proveedor" >
+										<f:ajax execute="@this" listener="#{facProvBEAN.doLoadBode()}"
+											render="txtNomB txtApeB txtComB txtDirB txtTelB" event="blur" />
+										</h:inputText>
 								</div>
 
 								<div class="form-group">
