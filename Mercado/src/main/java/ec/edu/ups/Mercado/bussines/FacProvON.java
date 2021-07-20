@@ -6,9 +6,11 @@ import javax.inject.Inject;
 import ec.edu.ups.Mercado.DAO.FacProvDAO;
 import ec.edu.ups.Mercado.DAO.ProductoDAO;
 import ec.edu.ups.Mercado.DAO.ProveedorDAO;
+import ec.edu.ups.Mercado.DAO.UsuariosDAO;
 import ec.edu.ups.Mercado.modelo.FacProv;
 import ec.edu.ups.Mercado.modelo.Producto;
 import ec.edu.ups.Mercado.modelo.Proveedor;
+import ec.edu.ups.Mercado.modelo.Usuario;
 
 @Stateless
 public class FacProvON {
@@ -21,6 +23,9 @@ public class FacProvON {
 
 	@Inject
 	private ProductoDAO daoProd;
+	
+	@Inject
+	private UsuariosDAO daoUsuario;
 
 	public void guardarFacProv(FacProv facProv) {
 
@@ -35,6 +40,11 @@ public class FacProvON {
 
 	public Proveedor getProv(String cedula) {
 		Proveedor p = daoProv.read(cedula);
+		return p;
+	}
+	
+	public Usuario getBode(String cedula) {
+		Usuario p = daoUsuario.read(cedula);
 		return p;
 	}
 

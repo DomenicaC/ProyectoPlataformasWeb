@@ -1,16 +1,22 @@
 package ec.edu.ups.Mercado.view;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import ec.edu.ups.Mercado.bussines.FacProvON;
 import ec.edu.ups.Mercado.modelo.FacDetProv;
 import ec.edu.ups.Mercado.modelo.FacProv;
 import ec.edu.ups.Mercado.modelo.Proveedor;
+import ec.edu.ups.Mercado.modelo.Usuario;
 
-public class FacProvBEAN {
+@Named
+@ViewScoped
+public class FacProvBEAN implements Serializable{
 
 	private FacProv newFacProv = new FacProv();
 
@@ -44,6 +50,15 @@ public class FacProvBEAN {
 		
 		Proveedor p = facProvON.getProv(cedula);
 		newFacProv.setProv(p);
+		
+		return null;
+	}
+	
+	public String doLoadBode() {
+		String cedula = newFacProv.getBode().getCedula();
+		
+		Usuario p = facProvON.getBode(cedula);
+		newFacProv.setBode(p);
 		
 		return null;
 	}

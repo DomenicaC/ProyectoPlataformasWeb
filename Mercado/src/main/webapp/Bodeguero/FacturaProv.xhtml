@@ -25,37 +25,37 @@
 							<div class="card-body">
 								<div class="form-group">
 									<label for="txtCedP">Cedula Proveedor</label>
-									<h:inputText type="text" class="form-control" id="txtCedP"
+									<h:inputText value="#{facProvBEAN.newFacProv.prov.cedula}" type="text" class="form-control" id="txtCedP"
 										placeholder="Ingrese la cedula del proveedor" />
 								</div>
 
 								<div class="form-group">
 									<label for="txtNomP">Nombre Proveedor</label>
-									<h:inputText type="text" class="form-control" id="txtNomP"
+									<h:inputText value="#{facProvBEAN.newFacProv.prov.nombre}" type="text" class="form-control" id="txtNomP"
 										placeholder="Password" />
 								</div>
 
 								<div class="form-group">
 									<label for="txtApeP">Apellido Proveedor</label>
-									<h:inputText type="text" class="form-control" id="txtApeP"
+									<h:inputText value="#{facProvBEAN.newFacProv.prov.apellido}" type="text" class="form-control" id="txtApeP"
 										placeholder="Password" />
 								</div>
 
 								<div class="form-group">
 									<label for="txtComP">Compañia Proveedor</label>
-									<h:inputText type="text" class="form-control" id="txtComP"
+									<h:inputText value="#{facProvBEAN.newFacProv.prov.compania}" type="text" class="form-control" id="txtComP"
 										placeholder="Password" />
 								</div>
 
 								<div class="form-group">
 									<label for="txtDirP">Direccion Proveedor</label>
-									<h:inputText type="text" class="form-control" id="txtDirP"
+									<h:inputText value="#{facProvBEAN.newFacProv.prov.direccion}" type="text" class="form-control" id="txtDirP"
 										placeholder="Password" />
 								</div>
 
 								<div class="form-group">
 									<label for="txtApeP">Telefono Proveedor</label>
-									<h:inputText type="text" class="form-control" id="txtTelP"
+									<h:inputText value="#{facProvBEAN.newFacProv.prov.telefono}" type="text" class="form-control" id="txtTelP"
 										placeholder="Password" />
 								</div>
 
@@ -77,38 +77,32 @@
 							<!-- form start -->
 							<div class="card-body">
 								<div class="form-group">
-									<label for="txtCedP">Cedula Bodeguero</label>
-									<h:inputText type="text" class="form-control" id="txtCedP"
+									<label for="txtCedB">Cedula Bodeguero</label>
+									<h:inputText value="#{facProvBEAN.newFacProv.bode.cedula}" type="text" class="form-control" id="txtCedB"
 										placeholder="Ingrese la cedula del proveedor" />
 								</div>
 
 								<div class="form-group">
-									<label for="txtNomP">Nombre Bodeguero</label>
-									<h:inputText type="text" class="form-control" id="txtNomP"
+									<label for="txtNomB">Nombre Bodeguero</label>
+									<h:inputText  value="#{facProvBEAN.newFacProv.bode.nombre}" type="text" class="form-control" id="txtNomB"
 										placeholder="Password" />
 								</div>
 
 								<div class="form-group">
-									<label for="txtApeP">Apellido Bodeguero</label>
-									<h:inputText type="text" class="form-control" id="txtApeP"
+									<label for="txtApeB">Apellido Bodeguero</label>
+									<h:inputText value="#{facProvBEAN.newFacProv.bode.apellido}" type="text" class="form-control" id="txtApeB"
 										placeholder="Password" />
 								</div>
 
 								<div class="form-group">
-									<label for="txtComP">Compañia Bodeguero</label>
-									<h:inputText type="text" class="form-control" id="txtComP"
+									<label for="txtDirB">Direccion Bodeguero</label>
+									<h:inputText value="#{facProvBEAN.newFacProv.bode.direccion}" type="text" class="form-control" id="txtDirB"
 										placeholder="Password" />
 								</div>
 
 								<div class="form-group">
-									<label for="txtDirP">Direccion Bodeguero</label>
-									<h:inputText type="text" class="form-control" id="txtDirP"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtApeP">Telefono Bodeguero</label>
-									<h:inputText type="text" class="form-control" id="txtTelP"
+									<label for="txtApeB">Telefono Bodeguero</label>
+									<h:inputText value="#{facProvBEAN.newFacProv.bode.telefono}" type="text" class="form-control" id="txtTelB"
 										placeholder="Password" />
 								</div>
 
@@ -120,7 +114,7 @@
 			
 			<div class="card-footer">
 				<h:outputText value="" />
-				<h:commandButton action="#{facturaBean.addDetalle()}"
+				<h:commandButton action="#{facProvBEAN.addDetFacProv()}"
 					value="+ Agregar" class="btn btn-info">
 					<f:ajax render="tblDetalles" execute="tblDetalles" />
 				</h:commandButton>
