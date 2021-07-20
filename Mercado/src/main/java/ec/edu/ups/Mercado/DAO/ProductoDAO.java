@@ -23,7 +23,7 @@ public class ProductoDAO {
 		em.merge(prod);
 	}
 
-	public Producto read(int codigo) {
+	public Producto find(int codigo) {
 		Producto c = em.find(Producto.class, codigo);
 		return c;
 

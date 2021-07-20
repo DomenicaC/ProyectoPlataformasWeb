@@ -1,5 +1,6 @@
 package ec.edu.ups.Mercado.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -77,6 +78,14 @@ public class FacProv {
 
 	public void setFacDetProv(List<FacDetProv> facDetProv) {
 		this.facDetProv = facDetProv;
+	}
+	
+	public void addDetalle(FacDetProv detalle) {
+		if(facDetProv == null) {
+			facDetProv = new ArrayList<FacDetProv>();
+		}
+		
+		facDetProv.add(detalle);
 	}
 
 }
