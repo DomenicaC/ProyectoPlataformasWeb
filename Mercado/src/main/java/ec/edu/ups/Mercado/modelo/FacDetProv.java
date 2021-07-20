@@ -16,6 +16,8 @@ public class FacDetProv {
 	private int cantidad;
 	private int stock;
 
+	private int codigoProducto;
+
 	@ManyToOne
 	@JoinColumn(name = "id_factura")
 	private Factura factura;
@@ -70,6 +72,14 @@ public class FacDetProv {
 
 	public void setProductos(Producto productos) {
 		this.productos = productos;
+	}
+
+	public int getCodigoProducto() {
+		return codigoProducto;
+	}
+
+	public void setCodigoProducto(int codigoProducto) {
+		this.codigoProducto = codigoProducto;
 	}
 
 }

@@ -23,14 +23,14 @@ public class FacProvON {
 
 	@Inject
 	private ProductoDAO daoProd;
-	
+
 	@Inject
 	private UsuariosDAO daoUsuario;
 
 	public void guardarFacProv(FacProv facProv) {
 
 		Proveedor p = daoProv.read(facProv.getProv().getCedula());
-		
+
 		Usuario b = daoUsuario.read(facProv.getBode().getCedula());
 		/*
 		 * if(p == null) { //daoProv.insert(facProv.getProv()); }else { daoProv }
@@ -44,7 +44,7 @@ public class FacProvON {
 		Proveedor p = daoProv.read(cedula);
 		return p;
 	}
-	
+
 	public Usuario getBode(String cedula) {
 		Usuario b = daoUsuario.read(cedula);
 		return b;

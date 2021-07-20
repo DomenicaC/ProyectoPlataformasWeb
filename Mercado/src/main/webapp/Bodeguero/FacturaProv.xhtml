@@ -9,126 +9,126 @@
 	<ui:define name="title">Ingresar Factura del proveedor</ui:define>
 
 	<ui:define name="contenido">
-		<h:form class="form-horizontal">
-			<!-- Datos de informacion de los usuarios -->
-			<div class="row">
-				<!-- Datos del usuario proveedor  -->
-				<div class="col-md-6">
 
-					<h:form>
-						<div class="card card-primary">
-							<div class="card-header">
-								<h3 class="card-title">Datos Proveedor</h3>
-							</div>
-							<!-- /.card-header -->
-							<!-- form start -->
-							<div class="card-body">
-								<div class="form-group">
-									<label for="txtCedP">Cedula Proveedor</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.prov.cedula}"
-										type="text" class="form-control" id="txtCedP"
-										placeholder="Ingrese la cedula del proveedor">
-										<f:ajax execute="@this" listener="#{facProvBEAN.doLoadProv()}"
-											render="txtNomP txtApeP txtComP txtDirP txtTelP" event="blur" />
-									</h:inputText>
-								</div>
+		<!-- Datos de informacion de los usuarios -->
+		<div class="row">
+			<!-- Datos del usuario proveedor  -->
+			<div class="col-md-6">
 
-								<div class="form-group">
-									<label for="txtNomP">Nombre Proveedor</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.prov.nombre}"
-										type="text" class="form-control" id="txtNomP"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtApeP">Apellido Proveedor</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.prov.apellido}"
-										type="text" class="form-control" id="txtApeP"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtComP">Compañia Proveedor</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.prov.compania}"
-										type="text" class="form-control" id="txtComP"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtDirP">Direccion Proveedor</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.prov.direccion}"
-										type="text" class="form-control" id="txtDirP"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtApeP">Telefono Proveedor</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.prov.telefono}"
-										type="text" class="form-control" id="txtTelP"
-										placeholder="Password" />
-								</div>
-
-							</div>
+				<h:form>
+					<div class="card card-primary">
+						<div class="card-header">
+							<h3 class="card-title">Datos Proveedor</h3>
 						</div>
-					</h:form>
-				</div>
-
-				<!-- Datos del usuario bodeguero que ingresa la fatura -->
-
-				<div class="col-md-6">
-
-					<h:form>
-						<div class="card card-success">
-							<div class="card-header">
-								<h3 class="card-title">Datos Bodeguero</h3>
+						<!-- /.card-header -->
+						<!-- form start -->
+						<div class="card-body">
+							<div class="form-group">
+								<label for="txtCedP">Cedula Proveedor</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.prov.cedula}"
+									type="text" class="form-control" id="txtCedP"
+									placeholder="Ingrese la cedula del proveedor">
+									<f:ajax execute="@this" listener="#{facProvBEAN.doLoadProv()}"
+										render="txtNomP txtApeP txtComP txtDirP txtTelP" event="blur" />
+								</h:inputText>
 							</div>
-							<!-- /.card-header -->
-							<!-- form start -->
-							<div class="card-body">
-								<div class="form-group">
-									<label for="txtCedB">Cedula Bodeguero</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.bode.cedula}"
-										type="text" class="form-control" id="txtCedB"
-										placeholder="Ingrese la cedula del proveedor" >
-										<f:ajax execute="@this" listener="#{facProvBEAN.doLoadBode()}"
-											render="txtNomB txtApeB txtComB txtDirB txtTelB" event="blur" />
-										</h:inputText>
-								</div>
 
-								<div class="form-group">
-									<label for="txtNomB">Nombre Bodeguero</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.bode.nombre}"
-										type="text" class="form-control" id="txtNomB"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtApeB">Apellido Bodeguero</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.bode.apellido}"
-										type="text" class="form-control" id="txtApeB"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtDirB">Direccion Bodeguero</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.bode.direccion}"
-										type="text" class="form-control" id="txtDirB"
-										placeholder="Password" />
-								</div>
-
-								<div class="form-group">
-									<label for="txtApeB">Telefono Bodeguero</label>
-									<h:inputText value="#{facProvBEAN.newFacProv.bode.telefono}"
-										type="text" class="form-control" id="txtTelB"
-										placeholder="Password" />
-								</div>
-
+							<div class="form-group">
+								<label for="txtNomP">Nombre Proveedor</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.prov.nombre}"
+									type="text" class="form-control" id="txtNomP"
+									placeholder="Password" />
 							</div>
+
+							<div class="form-group">
+								<label for="txtApeP">Apellido Proveedor</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.prov.apellido}"
+									type="text" class="form-control" id="txtApeP"
+									placeholder="Password" />
+							</div>
+
+							<div class="form-group">
+								<label for="txtComP">Compañia Proveedor</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.prov.compania}"
+									type="text" class="form-control" id="txtComP"
+									placeholder="Password" />
+							</div>
+
+							<div class="form-group">
+								<label for="txtDirP">Direccion Proveedor</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.prov.direccion}"
+									type="text" class="form-control" id="txtDirP"
+									placeholder="Password" />
+							</div>
+
+							<div class="form-group">
+								<label for="txtApeP">Telefono Proveedor</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.prov.telefono}"
+									type="text" class="form-control" id="txtTelP"
+									placeholder="Password" />
+							</div>
+
 						</div>
-					</h:form>
-				</div>
+					</div>
+				</h:form>
 			</div>
 
+			<!-- Datos del usuario bodeguero que ingresa la fatura -->
+
+			<div class="col-md-6">
+
+				<h:form>
+					<div class="card card-success">
+						<div class="card-header">
+							<h3 class="card-title">Datos Bodeguero</h3>
+						</div>
+						<!-- /.card-header -->
+						<!-- form start -->
+						<div class="card-body">
+							<div class="form-group">
+								<label for="txtCedB">Cedula Bodeguero</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.bode.cedula}"
+									type="text" class="form-control" id="txtCedB"
+									placeholder="Ingrese la cedula del proveedor">
+									<f:ajax execute="@this" listener="#{facProvBEAN.doLoadBode()}"
+										render="txtNomB txtApeB txtComB txtDirB txtTelB" event="blur" />
+								</h:inputText>
+							</div>
+
+							<div class="form-group">
+								<label for="txtNomB">Nombre Bodeguero</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.bode.nombre}"
+									type="text" class="form-control" id="txtNomB"
+									placeholder="Password" />
+							</div>
+
+							<div class="form-group">
+								<label for="txtApeB">Apellido Bodeguero</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.bode.apellido}"
+									type="text" class="form-control" id="txtApeB"
+									placeholder="Password" />
+							</div>
+
+							<div class="form-group">
+								<label for="txtDirB">Direccion Bodeguero</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.bode.direccion}"
+									type="text" class="form-control" id="txtDirB"
+									placeholder="Password" />
+							</div>
+
+							<div class="form-group">
+								<label for="txtApeB">Telefono Bodeguero</label>
+								<h:inputText value="#{facProvBEAN.newFacProv.bode.telefono}"
+									type="text" class="form-control" id="txtTelB"
+									placeholder="Password" />
+							</div>
+
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<h:form class="form-horizontal">
 			<div class="card-footer">
 				<h:outputText value="" />
 				<h:commandButton action="#{facProvBEAN.addDetFacProv()}"
@@ -141,51 +141,39 @@
 
 			<h:panelGrid columns="2">
 
-				<h:outputText value="Productos" />
-				<h:dataTable value="#{facturaBean.newFactura.detalles}"
+				<h:outputText value="Detalles" />
+				<h:dataTable value="#{facProvBEAN.newFacProv.detalles}"
 					class="table table-striped" var="detalle" id="tblDetalles">
 
 					<h:column>
 						<f:facet name="header">Codigo Producto</f:facet>
-						<h:inputText>
-							<f:ajax execute="@this"
-								listener="#{facturaBean.doLoadProducto()}"
-								render="txtCantidad txtProducto txtPrecio txtTotal txtTotalPagar txtIva"
-								event="blur" />
+						<h:inputText value="#{detalle.codigoProducto}">
+							<f:ajax execute="@this" listener="#{facProvBEAN.doLoadProd()}"
+								render="txtProducto txtCantidad txtStock" event="blur" />
 						</h:inputText>
 					</h:column>
 
 					<h:column>
 						<f:facet name="header">Nombre Producto</f:facet>
-						<h:inputText value="#{detalle.producto}" id="txtProducto" />
+						<h:inputText value="#{detalle.nombreProd}" id="txtProducto" />
 					</h:column>
 
 					<h:column>
 						<f:facet name="header">Cantidad</f:facet>
 						<h:inputText value="#{detalle.cantidad}" id="txtCantidad">
-							<f:ajax execute="@this" render="txtTotal txtIva txtTotalPagar" />
+
 						</h:inputText>
 					</h:column>
 
 					<h:column>
-						<f:facet name="header">Precio Unitario</f:facet>
-						<h:inputText value="#{detalle.precio}" id="txtPrecio" />
-					</h:column>
-
-					<h:column>
 						<f:facet name="header">Stock</f:facet>
-						<h:inputText value="#{detalle.total}" id="txtStock" />
-					</h:column>
-
-					<h:column>
-						<f:facet name="header">Total</f:facet>
-						<h:inputText value="#{detalle.total}" id="txtTotal" />
+						<h:inputText value="#{detalle.stock}" id="txtStock" />
 					</h:column>
 
 				</h:dataTable>
 
 
-				<h:commandButton action="#{facturaBean.doGuardarFactura()}"
+				<h:commandButton action="#{facProvBEAN.doGuardarFacProv()}"
 					class="btn btn-info" value="Guardar" />
 
 			</h:panelGrid>

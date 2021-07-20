@@ -30,7 +30,7 @@ public class FacProv {
 	private Usuario bode;
 
 	@OneToMany(mappedBy = "factura", cascade = CascadeType.ALL)
-	private List<FacDetProv> facDetProv;
+	private List<FacDetProv> detalles;
 
 	public String getRuc() {
 		return ruc;
@@ -72,20 +72,20 @@ public class FacProv {
 		this.bode = bode;
 	}
 
-	public List<FacDetProv> getFacDetProv() {
-		return facDetProv;
+	public List<FacDetProv> getDetalles() {
+		return detalles;
 	}
 
-	public void setFacDetProv(List<FacDetProv> facDetProv) {
-		this.facDetProv = facDetProv;
+	public void setDetalles(List<FacDetProv> detalles) {
+		this.detalles = detalles;
 	}
 	
 	public void addDetalle(FacDetProv detalle) {
-		if(facDetProv == null) {
-			facDetProv = new ArrayList<FacDetProv>();
+		if(detalles == null) {
+			detalles = new ArrayList<FacDetProv>();
 		}
 		
-		facDetProv.add(detalle);
+		detalles.add(detalle);
 	}
 
 }
