@@ -90,12 +90,12 @@ public class UsuarioBean {
 			
 			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
 			System.out.println("Ingreso admin");
-			return "./Administrador/template.xhtml";//poner el link de la pantalla principal de admin
+			return "Administrador/template";//poner el link de la pantalla principal de admin
 			
 		}else if(usuario.contains("@bode.mini.com")) {
 			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
 			System.out.println("Ingreso bodeguero");
-			return "http://localhost:8080/Mercado/faces/Bodeguero/MenuBodeguero.xhtml";//poner el link de la pantalla principal de el bodeguero
+			return "Bodeguero/MenuBodeguero";//poner el link de la pantalla principal de el bodeguero
 			
 		}else if(usuario.contains("@mini.com")){
 			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
