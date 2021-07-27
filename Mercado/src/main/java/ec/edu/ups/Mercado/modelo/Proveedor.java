@@ -21,7 +21,7 @@ public class Proveedor {
 	/**
 	 * Creacion de relacciones
 	 */
-	@OneToMany//(fetch = FetchType.EAGER)
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<FacProv> facProv;
 
 	public String getCedula() {

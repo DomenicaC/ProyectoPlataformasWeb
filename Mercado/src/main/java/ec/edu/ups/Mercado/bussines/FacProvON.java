@@ -1,5 +1,7 @@
 package ec.edu.ups.Mercado.bussines;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -34,7 +36,7 @@ public class FacProvON {
 
 		Usuario b = daoUsuario.read(facProv.getBode().getCedula());
 
-		FacDetProv deta = new FacDetProv();
+		/*FacDetProv deta = new FacDetProv();
 		Producto pr = daoProd.find(deta.getProductos().getCodigo());
 		System.out.println(pr+ "pr");
 
@@ -43,6 +45,17 @@ public class FacProvON {
 			System.out.println("Producto no encontrado");
 		} else {
 			daoProd.update(deta.getProductos());
+		}*/
+		
+		List<FacDetProv> lista = facProv.getDetalles();
+		int tamaño = lista.size();
+		//int codigo = lista.get(tamaño - 1).getCodigoProducto();
+		
+		for(int i=0;i<tamaño;i++) {
+			int codigo = lista.get(i).getCodigoProducto();
+			//Producto prod = daoProd.find(codigo);
+			//daoProd.update(prod);
+			System.out.println("Codigo "+codigo);
 		}
 
 		daoFactProv.insert(facProv);

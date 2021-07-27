@@ -26,7 +26,7 @@ public class Usuario {
 	@OneToMany//(fetch = FetchType.EAGER)
 	private List<Factura> facturas;
 
-	@OneToMany/*(fetch = FetchType.EAGER)*/
+	@OneToMany//(fetch = FetchType.LAZY)
 	private List<FacProv> factProv;
 
 	/**
@@ -104,12 +104,12 @@ public class Usuario {
 		this.facturas = facturas;
 	}
 
-	public List<FacProv> getFactProv() {
+	/*public List<FacProv> getFactProv() {
 		return factProv;
 	}
 
 	public void setFactProv(List<FacProv> factProv) {
 		this.factProv = factProv;
-	}
+	}*/
 	
 }

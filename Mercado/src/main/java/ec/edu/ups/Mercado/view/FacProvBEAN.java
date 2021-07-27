@@ -48,10 +48,6 @@ public class FacProvBEAN implements Serializable {
 
 	public String doGuardarFacProv() {
 		facProvON.guardarFacProv(newFacProv);
-		List<FacDetProv> lista = newFacProv.getDetalles();
-		int tamaño = lista.size();
-		//int codigo = lista.get(tamaño - 1).getCodigoProducto();
-		
 		
 		return null;
 	}
