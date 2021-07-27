@@ -7,67 +7,69 @@
 <h:head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Plataformas Web | Pagina de Registro</title>
+	<title>Minimarket Don Naza | Registrar</title>
 
 	<!-- Google Font: Source Sans Pro -->
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback" />
 	<!-- Font Awesome -->
 	<link rel="stylesheet"
-		href="./../template/plugins/fontawesome-free/css/all.min.css" />
+		href="./template/plugins/fontawesome-free/css/all.min.css" />
 	<!-- icheck bootstrap -->
 	<link rel="stylesheet"
-		href="./../template/plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+		href="./template/plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
 	<!-- Theme style -->
-	<link rel="stylesheet" href="./../template/dist/css/adminlte.min.css" />
+	<link rel="stylesheet" href="./template/dist/css/adminlte.min.css" />
 </h:head>
+<body class="login-page" style="min-height: 466px;">
+	<div class="login-box">
+		<!-- /.login-logo -->
+		<div class="card card-outline card-primary">
+			<div class="card-header text-center">
+				<a href="#" class="h1"><b>Minimarket<br /> Don Naza</b><br />
+					Clientes</a>
+			</div>
+			<div class="card-body">
+				<p class="login-box-msg">Registrate</p>
 
-<body class="register-page" style="min-height: 570.391px;">
-	<div class="register-box">
-		<div class="register-logo">
-			<a href="./../template/index2.html"><b>Minimarket</b></a>
-		</div>
+				<h:form class="form-horizontal">
 
-		<div class="card">
-			<div class="card-body register-card-body">
-				<p class="login-box-msg">Registro de Clientes</p>
-
-					<label for="txtCedula" class="">Ingrese su Cedula *</label>
+					<label for="txtCorreo" class="">Ingrese su Cedula:</label>
 					<div class="input-group mb-3">
 						<h:inputText value="#{usuarioBean.newUsuario.cedula}" type="text"
 							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
-								<span class="fas fa-user"></span>
+								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 					</div>
 
-					<label for="txtNombre" class="">Ingrese su Nombre *</label>
+					<label for="txtCorreo" class="">Ingrese su Nombre:</label>
 					<div class="input-group mb-3">
-						<h:inputText value="#{usuarioBean.newUsuario.nombre}" type="text"
+						<h:inputText value="#{usuarioBean.newUsuario.nombre}" type="email"
 							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
-								<span class="fas fa-user"></span>
+								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 					</div>
 
-					<label for="txtApe" class="">Ingrese su Apellido *</label>
+					<label for="txtCorreo" class="">Ingrese su Apellido:</label>
 					<div class="input-group mb-3">
 						<h:inputText value="#{usuarioBean.newUsuario.apellido}"
-							type="email" class="form-control" placeholder="text" />
+							type="email" class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
-								<span class="fas fa-user"></span>
+								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 					</div>
 
-					<label for="txtCorreo" class="">Ingrese su correo *</label>
+					<label for="txtCorreo" class="">Ingrese su correo:</label>
 					<div class="input-group mb-3">
-						<h:inputText value="#{usuarioBean.newUsuario.correo}" type="text"
+						<h:inputText value="#{usuarioBean.newUsuario.correo}" type="email"
 							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
@@ -77,7 +79,7 @@
 					</div>
 
 					<label for="txtConta" class="col-sm-20 col-form-label">Ingrese
-						su contraseña *</label>
+						su contraseña:</label>
 					<div class="input-group mb-3">
 						<h:inputText value="#{usuarioBean.newUsuario.contrasenia}"
 							type="password" class="form-control" placeholder="" />
@@ -88,76 +90,91 @@
 						</div>
 					</div>
 
-					<label for="txtTelf" class="">Ingrese su telefono *</label>
+					<label for="txtCorreo" class="">Ingrese su telefono:</label>
 					<div class="input-group mb-3">
 						<h:inputText value="#{usuarioBean.newUsuario.telefono}"
-							type="text" class="form-control" placeholder="Email" />
+							type="email" class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
-								<span class="fas fa-user"></span>
+								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 					</div>
 
-					<label for="txtDir" class="">Ingrese su Direccion *</label>
+					<label for="txtCorreo" class="">Ingrese su Direccion:</label>
 					<div class="input-group mb-3">
 						<h:inputText value="#{usuarioBean.newUsuario.direccion}"
-							type="text" class="form-control" placeholder="Email" />
+							type="email" class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
-								<span class="fas fa-user"></span>
+								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 					</div>
 
-					<label for="txtRol" class="">Rol:</label>
+					<label for="txtCorreo" class="">Rol:</label>
 					<div class="input-group mb-3">
-						<h:inputText value="#{usuarioBean.newUsuario.rol}" type="text"
-							class="form-control" placeholder="rol" />
+						<h:inputText value="#{usuarioBean.newUsuario.rol}" type="email"
+							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
-								<span class="fas fa-user"></span>
+								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-8">
-							<!--<div class="icheck-primary">
+							<div class="icheck-primary">
 								<h:inputText type="checkbox" id="agreeTerms" name="terms"
-									value="agree" />
-								<label for="agreeTerms"> Estoy de acuerdo con los <a
-									href="http://localhost:8080/Mercado/faces/Terminos.xhtml">terminos</a>
+									value="agree"/> <label for="agreeTerms"> I agree
+										to the <a href="#">terms</a>
 								</label>
-							</div>-->
+							</div>
 						</div>
 						<!-- /.col -->
 						<div class="col-4">
 							<h:commandButton type="submit" class="btn btn-primary btn-block"
-								action="#{usuarioBean.guardarUsuario()}" value="Registrar" />
+								action="#{usuarioBean.guardarUsuario()}" value="Registrarse"></h:commandButton>
 						</div>
 						<!-- /.col -->
 					</div>
-				
+
+
+					<div class="row">
+						<div class="col-8">
+							<div class="icheck-primary"></div>
+						</div>
+						<!-- /.col -->
+						
+						
+						<!-- /.col -->
+					</div>
+
+				</h:form>
+				<p class="mb-0">
+					<a href="http://localhost:8080/Mercado/faces/Login.xhtml"
+						class="text-center">¿Ya te Registraste?<br /> Ahora Inicia
+						Sesion
+					</a>
+				</p>
+				<!-- /.social-auth-links -->
+
 
 			</div>
-			<!-- /.form-box -->
+			<!-- /.card-body -->
 		</div>
 		<!-- /.card -->
 	</div>
-	<!-- /.register-box -->
+	<!-- /.login-box -->
 
 	<!-- jQuery -->
-	<script src="./../template/plugins/jquery/jquery.min.js"></script>
+	<script src="./template/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->
-	<script
-		src="./../template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="./template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- AdminLTE App -->
-	<script src="./../template/dist/js/adminlte.min.js"></script>
+	<script src="./template/dist/js/adminlte.min.js"></script>
 
 
 </body>
-
-
-
 </html>

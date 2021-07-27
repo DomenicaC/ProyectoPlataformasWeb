@@ -99,6 +99,7 @@ public class UsuarioBean {
 			
 		}else if(usuario.contains("@mini.com")){
 			newUsuario=onUsuario.getUsuarioLoggin(usuario, contrasenia);
+			System.out.println("Ingreso Cliente");
 			return null;//poner el link de la pantalla principal del usuario
 			
 		}else {
