@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import ec.edu.ups.Mercado.bussines.FacProvON;
+import ec.edu.ups.Mercado.bussines.ProductosON;
 import ec.edu.ups.Mercado.modelo.FacDetProv;
 import ec.edu.ups.Mercado.modelo.FacProv;
 import ec.edu.ups.Mercado.modelo.Producto;
@@ -23,6 +24,9 @@ public class FacProvBEAN implements Serializable {
 
 	@Inject
 	private FacProvON facProvON;
+	
+	@Inject 
+	private ProductosON prodON;
 
 	@PostConstruct
 	private void init() {
@@ -44,6 +48,11 @@ public class FacProvBEAN implements Serializable {
 
 	public String doGuardarFacProv() {
 		facProvON.guardarFacProv(newFacProv);
+		List<FacDetProv> lista = newFacProv.getDetalles();
+		int tamaño = lista.size();
+		//int codigo = lista.get(tamaño - 1).getCodigoProducto();
+		
+		
 		return null;
 	}
 

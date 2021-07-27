@@ -65,5 +65,7 @@ public class ProductoBean {
 		return 0;
 
 	}
+	
+	
 
 }

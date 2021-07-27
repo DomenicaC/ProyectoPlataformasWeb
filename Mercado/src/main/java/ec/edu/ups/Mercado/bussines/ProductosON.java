@@ -37,5 +37,9 @@ public class ProductosON {
 		return c;
 		
 	}
+	
+	public void actualizarProd(Producto prod) {
+		daoProd.update(prod);
+	}
 
 }
