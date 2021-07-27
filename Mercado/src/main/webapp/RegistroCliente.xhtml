@@ -32,12 +32,11 @@
 			<div class="card-body register-card-body">
 				<p class="login-box-msg">Registro de Clientes</p>
 
-				<form action="./../template/index.html" method="post">
+				<form action="" method="post">
+					<label for="txtCorreo" class="">Ingrese su Cedula *</label>
 					<div class="input-group mb-3">
-					<label for="txtCedula" class="col-sm-2 col-form-label">Cedula
-						Cliente:</label>
-						<input value="#{usuarioBean.newUsuario.cedula}" type="text"
-							class="form-control" placeholder="Cedula Cliente" />
+						<h:inputText value="#{usuarioBean.newUsuario.cedula}" type="text"
+							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-user"></span>
@@ -45,9 +44,10 @@
 						</div>
 					</div>
 
+					<label for="txtCorreo" class="">Ingrese su Nombre *</label>
 					<div class="input-group mb-3">
-						<input value="#{usuarioBean.newUsuario.nombre}" type="text"
-							class="form-control" placeholder="Nombre Cliente" />
+						<h:inputText value="#{usuarioBean.newUsuario.nombre}" type="text"
+							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-user"></span>
@@ -55,29 +55,21 @@
 						</div>
 					</div>
 
+					<label for="txtCorreo" class="">Ingrese su Apellido *</label>
 					<div class="input-group mb-3">
-						<input value="#{usuarioBean.newUsuario.apellido}" type="text"
-							class="form-control" placeholder="Apellido Cliente" />
+						<h:inputText value="#{usuarioBean.newUsuario.apellido}"
+							type="email" class="form-control" placeholder="text" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-user"></span>
 							</div>
 						</div>
 					</div>
-					
+
+					<label for="txtCorreo" class="">Ingrese su correo *</label>
 					<div class="input-group mb-3">
-						<input value="#{usuarioBean.newUsuario.direccion}" type="text" class="form-control"
-							placeholder="Ingrese su direccion" />
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-envelope"></span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="input-group mb-3">
-						<input value="#{usuarioBean.newUsuario.telefono}" type="text" class="form-control"
-							placeholder="Ingrese su telefono" />
+						<h:inputText value="#{usuarioBean.newUsuario.correo}" type="text"
+							class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-envelope"></span>
@@ -85,20 +77,11 @@
 						</div>
 					</div>
 
+					<label for="txtConta" class="col-sm-20 col-form-label">Ingrese
+						su contraseña *</label>
 					<div class="input-group mb-3">
-						<input value="#{usuarioBean.newUsuario.correo}" type="email"
-							class="form-control" placeholder="alguien@mini.com" />
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-envelope"></span>
-							</div>
-						</div>
-					</div>
-
-					<div class="input-group mb-3">
-						<input value="#{usuarioBean.newUsuario.contrasenia}"
-							type="password" class="form-control"
-							placeholder="Ingrese su contraseña" />
+						<h:inputText value="#{usuarioBean.newUsuario.contrasenia}"
+							type="password" class="form-control" placeholder="" />
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-lock"></span>
@@ -106,12 +89,35 @@
 						</div>
 					</div>
 
+					<label for="txtCorreo" class="">Ingrese su telefono *</label>
 					<div class="input-group mb-3">
-						<input value="#{usuarioBean.newUsuario.rol}" type="text" class="form-control"
-							placeholder="rol" />
+						<h:inputText value="#{usuarioBean.newUsuario.telefono}"
+							type="text" class="form-control" placeholder="Email" />
 						<div class="input-group-append">
 							<div class="input-group-text">
-								<span class="fas fa-envelope"></span>
+								<span class="fas fa-user"></span>
+							</div>
+						</div>
+					</div>
+
+					<label for="txtCorreo" class="">Ingrese su Direccion *</label>
+					<div class="input-group mb-3">
+						<h:inputText value="#{usuarioBean.newUsuario.direccion}"
+							type="text" class="form-control" placeholder="Email" />
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-user"></span>
+							</div>
+						</div>
+					</div>
+
+					<label for="txtCorreo" class="">Rol:</label>
+					<div class="input-group mb-3">
+						<h:inputText value="#{usuarioBean.newUsuario.rol}" type="text"
+							class="form-control" placeholder="rol" />
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-user"></span>
 							</div>
 						</div>
 					</div>
@@ -119,16 +125,17 @@
 					<div class="row">
 						<div class="col-8">
 							<div class="icheck-primary">
-								<input type="checkbox" id="agreeTerms" name="terms"
-									value="agree" /> <label for="agreeTerms"> Estoy de
-									acuerdo con los <a href="#">terminos</a>
+								<h:inputText type="checkbox" id="agreeTerms" name="terms"
+									value="agree" />
+								<label for="agreeTerms"> Estoy de acuerdo con los <a
+									href="#">terminos</a>
 								</label>
 							</div>
 						</div>
 						<!-- /.col -->
 						<div class="col-4">
-						<h:commandButton type="submit" class="btn btn-primary btn-block"
-					action="#{usuarioBean.guardarUsuario()}" value="Registrar" />
+							<h:commandButton type="submit" class="btn btn-primary btn-block"
+								action="#{usuarioBean.guardarUsuario()}" value="Registrar" />
 						</div>
 						<!-- /.col -->
 					</div>
@@ -144,7 +151,8 @@
 	<!-- jQuery -->
 	<script src="./../template/plugins/jquery/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->
-	<script src="./../template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="./../template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- AdminLTE App -->
 	<script src="./../template/dist/js/adminlte.min.js"></script>
 
