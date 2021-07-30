@@ -51,7 +51,7 @@ public class FacDetProv {
 	}
 
 	public int getStock() {
-		return stock + cantidad;
+		return stock;
 	}
 
 	public void setStock(int stock) {

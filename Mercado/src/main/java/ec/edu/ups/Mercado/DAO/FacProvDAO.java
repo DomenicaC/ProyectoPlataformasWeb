@@ -32,6 +32,17 @@ public class FacProvDAO {
 		FacProv c = em.find(FacProv.class, ruc);
 		em.remove(c);
 	}
+	
+	public int numeroFactura() {
+		
+		String sql = "select Max(ruc) from public.facprov;";
+		
+		
+		
+		
+		
+		return 0;
+	}
 
 	public List<FacProv> getFacturaProv(String ruc) {
 		String jpq2 = "SELECT c FROM FacProv c " + "WHERE ruc LIKE ?1 ";

@@ -1,6 +1,8 @@
 package ec.edu.ups.Mercado.view;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -45,8 +47,47 @@ public class FacProvBEAN implements Serializable {
 	public void setNewFacProv(FacProv newFacProv) {
 		this.newFacProv = newFacProv;
 	}
+	
+	public String doControlarStock() {
+		
+		
+		List<FacDetProv> lista = newFacProv.getDetalles();
+		int tamaño = lista.size();
+		if(tamaño>(tamaño-1)) {
+			int codigo = lista.get(tamaño - 1).getCodigoProducto();
+			int cantidad =lista.get(tamaño-1).getCantidad();
+			Producto p = facProvON.getProducto(codigo);
+
+			lista.remove(tamaño - 1);
+
+			FacDetProv d = new FacDetProv();
+			d.setCodigoProducto(codigo);
+			d.setCantidad(cantidad);
+			d.setNombreProd(p.getNombre());
+			d.setStock(p.getStock()+cantidad);
+			lista.add(d);
+		}
+		return null;
+	}
 
 	public String doGuardarFacProv() {
+		
+		/*List<FacDetProv> productos=newFacProv.getDetalles();
+		
+		for(int i=0;i<productos.size();i++) {
+			Producto p = facProvON.getProducto(productos.get(i).getCodigoProducto());
+			p.setStock(productos.get(i).getCantidad()+p.getStock());
+			prodON.actualizarProd(p);
+			
+		}*/
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+		String fechaComoCadena = sdf.format(new Date());
+		newFacProv.setFecha(fechaComoCadena);
+		System.out.println("Fecha: "+fechaComoCadena);
+		//facProvON.numeroFacctura();
+		
+		
 		facProvON.guardarFacProv(newFacProv);
 		
 		return null;
@@ -87,7 +128,6 @@ public class FacProvBEAN implements Serializable {
 		d.setNombreProd(p.getNombre());
 		d.setStock(p.getStock());
 		lista.add(d);
-
 		return null;
 
 	}
@@ -97,7 +137,9 @@ public class FacProvBEAN implements Serializable {
 		System.out.println("Añadir detalle");
 		List<FacDetProv> deta = newFacProv.getDetalles();
 
-		newFacProv.addDetalle(new FacDetProv());
+		deta.add(new FacDetProv());
+		newFacProv.setDetalles(deta);
+		//newFacProv.addDetalle(new FacDetProv());
 		// newFacProv
 
 		/*

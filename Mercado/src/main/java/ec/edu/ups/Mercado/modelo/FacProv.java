@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -14,7 +15,8 @@ import javax.persistence.OneToOne;
 public class FacProv {
 
 	@Id
-	private String ruc;
+	@GeneratedValue
+	private int ruc;
 	private String fecha;
 	private double totalFactura;
 
@@ -32,11 +34,11 @@ public class FacProv {
 	@OneToMany(mappedBy = "factura", cascade = CascadeType.ALL)
 	private List<FacDetProv> detalles;
 
-	public String getRuc() {
+	public int getRuc() {
 		return ruc;
 	}
 
-	public void setRuc(String ruc) {
+	public void setRuc(int ruc) {
 		this.ruc = ruc;
 	}
 

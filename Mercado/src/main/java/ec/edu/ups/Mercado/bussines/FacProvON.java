@@ -66,6 +66,11 @@ public class FacProvON {
 		Proveedor p = daoProv.read(cedula);
 		return p;
 	}
+	
+	public int numeroFacctura() {
+		return daoFactProv.numeroFactura();
+		
+	}
 
 	public Usuario getBode(String cedula) {
 		Usuario b = daoUsuario.read(cedula);

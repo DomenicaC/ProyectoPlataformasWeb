@@ -161,7 +161,7 @@
 					<h:column>
 						<f:facet name="header">Cantidad</f:facet>
 						<h:inputText value="#{detalle.cantidad}" id="txtCantidad">
-						<f:ajax execute="@this" render="txtStock"/>
+						<f:ajax execute="@this" render="txtStock" listener="#{facProvBEAN.doControlarStock()}"/>
 						</h:inputText>
 					</h:column>
 
