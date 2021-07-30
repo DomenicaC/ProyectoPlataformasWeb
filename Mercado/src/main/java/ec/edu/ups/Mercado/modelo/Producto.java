@@ -1,13 +1,17 @@
 package ec.edu.ups.Mercado.modelo;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Producto {
+public class Producto implements Serializable{
 
 	@Id
 	@GeneratedValue
@@ -21,7 +25,7 @@ public class Producto {
 	/**
 	 * Creacion de relacciones
 	 */
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "Id_Categoria")
 	private Categorias categorias;
 

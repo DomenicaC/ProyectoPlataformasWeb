@@ -42,4 +42,7 @@ public class ProductosON {
 		daoProd.update(prod);
 	}
 
+	public List<Producto> getBuscarProducto(String p){
+		return daoProd.getBuscarProducto(p);
+	}
 }

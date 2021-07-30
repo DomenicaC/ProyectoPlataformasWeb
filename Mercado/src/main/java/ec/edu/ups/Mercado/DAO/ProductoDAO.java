@@ -44,5 +44,19 @@ public class ProductoDAO {
 		return prods;
 
 	}
+	
+	public List<Producto> getBuscarProducto(String producto){
+		
+		String sql="SELECT p "
+				+ "	FROM Producto p"
+				+ " where descripcion like  ?1 ";
+		
+		producto="%"+producto+"%";
+		Query q=em.createQuery(sql,Producto.class);
+		q.setParameter(1, producto);
+		List<Producto> produc=q.getResultList();
+		return produc;
+		
+	}
 
 }

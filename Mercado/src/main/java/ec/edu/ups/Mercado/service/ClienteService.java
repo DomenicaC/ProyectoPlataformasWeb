@@ -10,14 +10,14 @@ import javax.ws.rs.core.MediaType;
 import ec.edu.ups.Mercado.bussines.UsuariosON;
 import ec.edu.ups.Mercado.modelo.Usuario;
 
-@Path("Clientes")
+@Path("/Clientes")
 public class ClienteService {
 
 	@Inject
 	private UsuariosON usuarioON;
 	
 	@PUT
-	@Path("RegistroCliente")
+	@Path("/RegistroCliente")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String registrarCliente(Usuario u) {

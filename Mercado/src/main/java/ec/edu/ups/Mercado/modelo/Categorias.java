@@ -1,5 +1,6 @@
 package ec.edu.ups.Mercado.modelo;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Categorias {
+public class Categorias implements Serializable{
 
 	@Id
 	@GeneratedValue
@@ -17,7 +18,7 @@ public class Categorias {
 	private String categoria;
 	private String descripcion;
 
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Producto> productos;
 
 	public int getCodigo() {
