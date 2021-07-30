@@ -34,17 +34,15 @@ public class ProductoDAO {
 		em.remove(c);
 	}
 
-	public List<Producto> getProductos(/*int codigo*/) {
-		
-		String jpq2 = "SELECT c FROM Producto c " ;
+	public List<Producto> getProductos() {
 
-		//nombre = nombre + "%";
+		String jpq2 = "SELECT c FROM Producto c ";
+
 		Query query = em.createQuery(jpq2, Producto.class);
-		//query.setParameter(1, nombre);
-		
+
 		List<Producto> prods = query.getResultList();
 		return prods;
-		
+
 	}
-	
+
 }
