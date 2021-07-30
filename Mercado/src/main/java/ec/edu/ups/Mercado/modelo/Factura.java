@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -13,7 +14,8 @@ import javax.persistence.OneToOne;
 public class Factura {
 
 	@Id
-	private String ruc;
+	@GeneratedValue
+	private int ruc;
 	private String fecha;
 	private double subtotal;
 	private double iva;
@@ -32,11 +34,11 @@ public class Factura {
 	/**
 	 * Generar getters and setters
 	 */
-	public String getRuc() {
+	public int getRuc() {
 		return ruc;
 	}
 
-	public void setRuc(String ruc) {
+	public void setRuc(int ruc) {
 		this.ruc = ruc;
 	}
 
