@@ -20,7 +20,7 @@ public class ProductosService {
 	private ProductosON productoON;
 	
 	
-	@GET
+	@GET 
 	@Path("/Productos")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Producto> getProductos(){
