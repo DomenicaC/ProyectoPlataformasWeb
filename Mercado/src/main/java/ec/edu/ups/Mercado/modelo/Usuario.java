@@ -26,7 +26,7 @@ public class Usuario {
 	@OneToMany//(fetch = FetchType.EAGER)
 	private List<Factura> facturas;
 
-	@OneToMany//(fetch = FetchType.LAZY)
+	@OneToMany//(fetch = FetchType.EAGER)
 	private List<FacProv> factProv;
 
 	/**
