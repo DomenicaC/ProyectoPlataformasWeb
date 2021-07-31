@@ -21,7 +21,7 @@
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-prepend" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-            <input class="form-control" formControlName="lname" id="cedula" name="cedula"
+            <input class="form-control"  id="cedula" name="cedula"
                    placeholder="Ingrese aquí su cédula"
                    required type="text" [(ngModel)]="registro.cedula">
           </div>
@@ -43,7 +43,7 @@
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-prepend" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-            <input class="form-control" formControlName="fname" id="fname" name="fname"
+            <input class="form-control"  id="fname" name="fname"
                    placeholder="Ingrese aquí su nombre"
                    required type="text" [(ngModel)]="registro.nombre">
           </div>
@@ -65,7 +65,7 @@
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-prepend" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-            <input class="form-control" formControlName="lname" id="lname" name="lname"
+            <input class="form-control" id="lname" name="lname"
                    placeholder="Ingrese aquí su apellido"
                    required type="text" [(ngModel)]="registro.apellido">
           </div>
@@ -87,7 +87,7 @@
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-            <input class="form-control" formControlName="email" id="email" name="email"
+            <input class="form-control"  id="email" name="email"
                    placeholder="ejemplo@mini.com"
                    required type="text" [(ngModel)]="registro.correo">
           </div>
@@ -128,7 +128,7 @@
         <div class="form-group has-danger">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-            <input class="form-control" formControlName="password" id="password" name="password"
+            <input class="form-control" id="password" name="password"
                    placeholder="Ingrese aquí su contraseña"
                    required type="password" [(ngModel)]="registro.contrasenia">
           </div>
@@ -149,7 +149,7 @@
             <div class="input-group-addon" style="width: 2.6rem">
               <i class="fa fa-repeat"></i>
             </div>
-            <input class="form-control" formControlName="confirmPassword" id="password-confirm"
+            <input class="form-control"  id="password-confirm"
                    name="Contra"
                    placeholder="Ingrese aquí su contraseña otra vez" required type="password">
           </div>
@@ -174,7 +174,7 @@
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-prepend" style="width: 2.6rem"><i class="fa fa-phone"></i></div>
-            <input class="form-control" formControlName="lname" id="tel" name="tel"
+            <input class="form-control"  id="tel" name="tel"
                    placeholder="Ingrese aquí su telefono"
                    required type="text" [(ngModel)]="registro.telefono">
           </div>
@@ -197,9 +197,32 @@
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
             <div class="input-group-prepend" style="width: 2.6rem"><i class="fa fa-address-book"></i></div>
-            <input class="form-control" formControlName="lname" id="dir" name="dir"
+            <input class="form-control"  id="dir" name="dir"
                    placeholder="Ingrese aquí su direccion"
                    required type="text" [(ngModel)]="registro.direccion">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put name validation error messages here -->
+                        </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 field-label-responsive">
+        <label for="rol">Rol:</label>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-prepend" style="width: 2.6rem"><i class="fa fa-address-book"></i></div>
+            <input class="form-control"  id="rol" name="rol"
+                   placeholder="Ingrese aquí su rol"
+                   required type="text" [(ngModel)]="registro.rol">
           </div>
         </div>
       </div>

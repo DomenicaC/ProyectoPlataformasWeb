@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
 
   loguear(){
     console.log(this.login)
-    this.loginService.logear(this.login);
+    this.loginService.logear(this.login).subscribe(data => {
+      console.log("Data " + data)
+    });
     let params: NavigationExtras = {
       queryParams: {
         login: this.login

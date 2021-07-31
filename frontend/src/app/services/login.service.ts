@@ -9,13 +9,16 @@ import {Observable} from "rxjs";
 })
 export class LoginService {
 
+  login: Login = new Login();
+
   constructor(private http: HttpClient) { }
 
-
+  usuario = this.login.correo;
+  contrasenia = this.login.contrasenia;
 
   logear(login: Login): Observable<any>{
 
-    const url = environment.server_URL + '/Clientes/Control/{usuario:String}/{contra:String}';
+    const url = environment.server_URL + '/Clientes/Control/usuario/{contra:String}';
     return this.http.post<any>(url, login)
 
   }
