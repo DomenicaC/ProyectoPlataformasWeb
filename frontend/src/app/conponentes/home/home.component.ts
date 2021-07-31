@@ -9,17 +9,14 @@ import {count} from "rxjs/operators";
 })
 export class HomeComponent implements OnInit {
 
-  productos: any[] = [];
+  productos: any;
 
 
   constructor(private productoService: ProductoService) { }
 
   ngOnInit(): void {
     this.productoService.showMessage();
-    /*this.productoService.getAllProductos().subscribe((prods: {count: Number, productos: any[]}) => {
-        this.productos = prods.productos;
-        console.log(this.productos);
-    });*/
+    this.productos = this.productoService.getAllProductos();
   }
 
 }

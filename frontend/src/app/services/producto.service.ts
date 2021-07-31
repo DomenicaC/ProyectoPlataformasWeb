@@ -13,6 +13,12 @@ export class ProductoService {
 
   /*Obtener todos los productos */
 
+  getAllProductos(): Observable<any>{
+
+    const url = environment.server_URL + 'Produc/Productos';
+    return this.http.get(url)
+
+  }
 
   showMessage(){
     console.log("Listando Productos")
