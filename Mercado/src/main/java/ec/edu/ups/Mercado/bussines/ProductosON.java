@@ -45,4 +45,10 @@ public class ProductosON {
 	public List<Producto> getBuscarProducto(String p){
 		return daoProd.getBuscarProducto(p);
 	}
+	
+	public List<Producto> getSingleProd(int cod) {
+
+		return daoProd.getSingleProd(cod);
+
+	}
 }

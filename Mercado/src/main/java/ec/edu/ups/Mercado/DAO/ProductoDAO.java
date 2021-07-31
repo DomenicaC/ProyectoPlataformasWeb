@@ -44,19 +44,29 @@ public class ProductoDAO {
 		return prods;
 
 	}
-	
-	public List<Producto> getBuscarProducto(String producto){
-		
-		String sql="SELECT p "
-				+ "	FROM Producto p"
-				+ " where descripcion like  ?1 ";
-		
-		producto="%"+producto+"%";
-		Query q=em.createQuery(sql,Producto.class);
+
+	public List<Producto> getBuscarProducto(String producto) {
+
+		String sql = "SELECT p " + "	FROM Producto p" + " where descripcion like  ?1 ";
+
+		producto = "%" + producto + "%";
+		Query q = em.createQuery(sql, Producto.class);
 		q.setParameter(1, producto);
-		List<Producto> produc=q.getResultList();
+		List<Producto> produc = q.getResultList();
 		return produc;
-		
+
+	}
+
+	public List<Producto> getSingleProd(int cod) {
+
+		String jpq2 = "SELECT c FROM Producto c WHERE codigo = ?1";
+
+		Query query = em.createQuery(jpq2, Producto.class);
+		query.setParameter(1, cod);
+
+		List<Producto> prods = query.getResultList();
+		return prods;
+
 	}
 
 }

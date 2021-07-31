@@ -8,6 +8,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import ec.edu.ups.Mercado.bussines.ProductosON;
@@ -33,6 +34,14 @@ public class ProductosService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Producto> buscarPorNombre(@PathParam("palabra") String palabra){
 		List<Producto> p=productoON.getBuscarProducto(palabra);
+		return p;
+	}
+	
+	@GET
+	@Path("unProd")
+	@Produces (MediaType.APPLICATION_JSON)
+	public List<Producto> getSingleProd(@QueryParam("cod") int cod){
+		List<Producto> p=productoON.getSingleProd(cod);
 		return p;
 	}
 }
