@@ -12,6 +12,8 @@ import { HomeComponent } from './conponentes/home/home.component';
 import { ProductosComponent } from './conponentes/productos/productos.component';
 import { GraciasComponent } from './conponentes/gracias/gracias.component';
 import {HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './conponentes/login/login.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import {HttpClientModule} from "@angular/common/http";
     ChequeoComponent,
     HomeComponent,
     ProductosComponent,
-    GraciasComponent
+    GraciasComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

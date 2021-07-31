@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  server_URL: "http://localhost:3000/api"
+  server_URL: "http://localhost:8080/Mercado/ws"
 };
 
 /*

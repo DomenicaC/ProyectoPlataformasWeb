@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-6 d-flex mx-auto flex-column">
+        <div class="d-flex flex-column align-items-center justify-content-around">
+          <h1>Inicie Sesión</h1></div>
+        <form novalidate >
+          <div class="form-group">
+            <label for="correo">Correo</label>
+            <input class="form-control" id="correo" type="email"  name="Correo" required [(ngModel)]="login.correo">
+          </div>
+
+          <div class="form-group">
+            <label for="contrasenia">Contraseña</label>
+            <input class="form-control" id="contrasenia" type="password"  name="contrasenia" required [(ngModel)]="login.contrasenia">
+          </div>
+          <div class="d-flex flex-column align-items-center justify-content-around">
+            <button class="btn btn-primary btn-sm btn-block" (click)="guardar()">Login</button>
+            <hr>
+          <a>¿Aun no tienes una cuenta? <br/> <a href=""><strong>Registrate Ahora</strong></a> </a>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
