@@ -4,9 +4,9 @@
   <div id="top-header">
     <div class="container">
       <ul class="header-links pull-left">
-        <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-        <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-        <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+        <li><a href="#"><i class="fa fa-phone"></i> +593-96-156-1457</a></li>
+        <li><a href="#"><i class="fa fa-envelope-o"></i> domNaza@mini.com</a></li>
+        <li><a href="#"><i class="fa fa-map-marker"></i> Calle vieja - Diagonal UPS</a></li>
       </ul>
       <ul class="header-links pull-right">
         <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
@@ -62,8 +62,34 @@
             <!-- /Wishlist -->
 
             <!-- Cart -->
-            <div class="dropdown" >
-
+            <div class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor:pointer;">
+                <i class="fa fa-shopping-cart"></i>
+                <span>Your Cart</span>
+                <div class="qty">0</div>
+              </a>
+              <div class="cart-dropdown">
+                <div class="cart-list" >
+                  <div class="product-widget" >
+                    <div class="product-img">
+                      <img [src]="" width="20px">
+                    </div>
+                    <div class="product-body">
+                      <h3 class="product-name"><a href="#"></a></h3>
+                      <h4 class="product-price"><span class="qty"> x </span>  </h4>
+                    </div>
+                    <button class="delete" ><i class="fa fa-close"></i></button>
+                  </div>
+                </div>
+                <div class="cart-summary">
+                  <small> Item(s) selected</small>
+                  <h5>TOTAL: </h5>
+                </div>
+                <div class="cart-btns">
+                  <a routerLink="/cart">View Cart</a>
+                  <a routerLink="/checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
             </div>
             <!-- /Cart -->
 

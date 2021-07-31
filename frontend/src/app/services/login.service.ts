@@ -18,7 +18,7 @@ export class LoginService {
 
   logear(login: Login): Observable<any>{
 
-    const url = environment.server_URL + '/Clientes/Control/usuario/{contra:String}';
+    const url = environment.server_URL + '/Clientes/Control/usuario/contrasenia';
     return this.http.post<any>(url, login)
 
   }

@@ -1,1 +1,71 @@
-<p>carrito works!</p>
+
+<div class="container">
+  <div  class="text-center my-5">
+    <h4>Tu carro esta vacio</h4>
+    <button class="btn btn-primary btn-lg mt-3" routerLink="/">Seguir Comprando</button>
+  </div>
+
+  <ng-container >
+    <div class="row">
+      <div class="col my-4">
+        <table class="table">
+          <thead class="table-dark">
+          <tr class="text-center">
+            <th>Imagen</th>
+            <th>Nombre Producto</th>
+            <th>Precio Producto</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr >
+            <td class="d-flex align-items-center justify-content-around" >
+              <img [src]="" alt="" height="60" class="order-1">
+              <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash" ></i></span>
+            </td>
+            <td><p></p></td>
+            <td>
+              <p></p>
+            </td>
+            <td>
+              <form>
+                <div class="value-button" id="decrease" >
+                  <i class="fa fa-minus"></i>
+                </div>
+                <input type="number" id="number" [value]="" />
+                <div class="value-button" id="increase" >
+                  <i class="fa fa-plus"></i>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p> | currency:'USD'}}</p>
+            </td>
+          </tr>
+          <tr class="border-0">
+            <td style="border: none;"></td>
+            <td></td>
+            <td></td>
+            <td>TOTAL</td>
+            <td></td>
+
+          </tr>
+
+          </tbody>
+        </table>
+
+
+      </div>
+
+      <div class="col-md-12 d-flex mb-5">
+        <div class="d-flex w-100 justify-content-between flex-sm-column flex-md-row">
+          <a routerLink="/chequeo" class="btn btn-danger btn-sm order-1">Checkout</a>
+          <a routerLink="/" class="btn btn-success btn-sm order-0">Continuar Comprando</a>
+        </div>
+      </div>
+
+    </div>
+  </ng-container>
+
+</div>
