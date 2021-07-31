@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Login} from "../../domain/login";
 import {NavigationExtras, Router} from "@angular/router";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-login',
@@ -11,19 +12,21 @@ export class LoginComponent implements OnInit {
 
   login: Login = new Login();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
 
-  guardar(){
+  loguear(){
     console.log(this.login)
+    this.loginService.logear(this.login);
     let params: NavigationExtras = {
       queryParams: {
         login: this.login
       }
     }
-    console.log("Cliente logeado")
+    console.log("Cliente logueado")
 
     this.router.navigate([''], params)
   }

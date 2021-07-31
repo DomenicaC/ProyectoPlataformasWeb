@@ -15,7 +15,7 @@ export class ProductoService {
 
   getAllProductos(): Observable<any>{
 
-    const url = environment.server_URL + 'Produc/Productos';
+    const url = environment.server_URL + '/Produc/Productos';
     return this.http.get(url)
 
   }
