@@ -15,6 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './conponentes/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RegistrarComponent } from './conponentes/registrar/registrar.component';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -38,7 +39,31 @@ import { RegistrarComponent } from './conponentes/registrar/registrar.component'
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {
+        path: '',component: HomeComponent
+      },
+      {
+        path: 'productos/:codigo', component: ProductosComponent
+      },
+      {
+        path: 'carrito', component: CarritoComponent
+      },
+      {
+        path: 'chequeo', component: ChequeoComponent
+      },
+      {
+        path: 'gracias', component: GraciasComponent
+      },
+      {
+        path: 'login', component: LoginComponent
+      },
+      {
+        path: 'registrar', component: RegistrarComponent
+      }
+
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
