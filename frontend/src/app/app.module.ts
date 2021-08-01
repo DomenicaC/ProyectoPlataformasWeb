@@ -15,7 +15,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './conponentes/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RegistrarComponent } from './conponentes/registrar/registrar.component';
-import {RouterModule} from "@angular/router";
+import {Cat1Component} from "./conponentes/cat1/cat1.component";
+import {Cat2Component} from "./conponentes/cat2/cat2.component";
+import {Cat3Component} from "./conponentes/cat3/cat3.component";
 
 
 
@@ -25,6 +27,9 @@ import {RouterModule} from "@angular/router";
     HeaderComponent,
     FooterComponent,
     CarritoComponent,
+    Cat1Component,
+    Cat2Component,
+    Cat3Component,
     ChequeoComponent,
     HomeComponent,
     ProductosComponent,
@@ -40,30 +45,6 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',component: HomeComponent
-      },
-      {
-        path: 'productos/:codigo', component: ProductosComponent
-      },
-      {
-        path: 'carrito', component: CarritoComponent
-      },
-      {
-        path: 'chequeo', component: ChequeoComponent
-      },
-      {
-        path: 'gracias', component: GraciasComponent
-      },
-      {
-        path: 'login', component: LoginComponent
-      },
-      {
-        path: 'registrar', component: RegistrarComponent
-      }
-
-    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

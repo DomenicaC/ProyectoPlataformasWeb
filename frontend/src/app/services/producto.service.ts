@@ -30,6 +30,27 @@ export class ProductoService {
     console.log("Producto Obtenido")
   }*/
 
+  getCat1Prod(): Observable<any> {
+    const url = environment.server_URL + '/Produc/catLacteos';
+    return this.http.get(url)
+
+    console.log("Listando Productos categoria 1")
+  }
+
+  getCat2Prod(): Observable<any> {
+    const url = environment.server_URL + '/Produc/catLimpieza';
+    return this.http.get(url)
+
+    console.log("Listando Productos categoria 2")
+  }
+
+  getCat3Prod(): Observable<any> {
+    const url = environment.server_URL + '/Produc/catRopa';
+    return this.http.get(url)
+
+    console.log("Listando Productos categoria 3")
+  }
+
   showMessage(){
 
   }

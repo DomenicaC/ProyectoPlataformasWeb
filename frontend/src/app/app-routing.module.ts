@@ -7,6 +7,9 @@ import {ChequeoComponent} from "./conponentes/chequeo/chequeo.component";
 import {GraciasComponent} from "./conponentes/gracias/gracias.component";
 import {LoginComponent} from "./conponentes/login/login.component";
 import {RegistrarComponent} from "./conponentes/registrar/registrar.component";
+import {Cat1Component} from "./conponentes/cat1/cat1.component";
+import {Cat2Component} from "./conponentes/cat2/cat2.component";
+import {Cat3Component} from "./conponentes/cat3/cat3.component";
 
 const routes: Routes = [
 
@@ -30,6 +33,15 @@ const routes: Routes = [
   },
   {
     path: 'registrar', component: RegistrarComponent
+  },
+  {
+    path: 'cat1', component: Cat1Component
+  },
+  {
+    path: 'cat2', component: Cat2Component
+  },
+  {
+    path: 'cat3', component: Cat3Component
   }
 
 ];
