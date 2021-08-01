@@ -63,7 +63,7 @@ public class ProductosService {
 	}
 	
 	@GET 
-	@Path("/catLacteos")
+	@Path("/catRopa")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Producto> getRopa(){
 		List<Producto> p= productoON.getRopa();
