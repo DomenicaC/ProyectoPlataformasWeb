@@ -51,4 +51,22 @@ public class ProductosON {
 		return daoProd.getSingleProd(cod);
 
 	}
+	
+	public List<Producto> getLacteos() {
+
+		return daoProd.getCatLacteos();
+
+	}
+	
+	public List<Producto> getRopa() {
+
+		return daoProd.getCatRopa();
+
+	}
+	
+	public List<Producto> getLimpieza() {
+
+		return daoProd.getCatLimpieza();
+
+	}
 }

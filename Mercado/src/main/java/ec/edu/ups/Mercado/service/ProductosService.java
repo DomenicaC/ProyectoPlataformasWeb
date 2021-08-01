@@ -3,6 +3,7 @@ package ec.edu.ups.Mercado.service;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -44,4 +45,30 @@ public class ProductosService {
 		List<Producto> p=productoON.getSingleProd(cod);
 		return p;
 	}
+	
+	@GET 
+	@Path("/catLacteos")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Producto> getLacteos(){
+		List<Producto> p= productoON.getLacteos();
+		return p;
+	}
+	
+	@GET 
+	@Path("/catLimpieza")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Producto> getLimpieza(){
+		List<Producto> p= productoON.getLimpieza();
+		return p;
+	}
+	
+	@GET 
+	@Path("/catLacteos")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Producto> getRopa(){
+		List<Producto> p= productoON.getRopa();
+		return p;
+	}
+	
+	
 }

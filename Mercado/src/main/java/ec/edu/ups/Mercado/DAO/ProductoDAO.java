@@ -68,5 +68,41 @@ public class ProductoDAO {
 		return prods;
 
 	}
+	
+	public List<Producto> getCatLacteos() {
+
+		String jpq2 = "SELECT c FROM Producto c WHERE categorias = 1";
+
+		Query query = em.createQuery(jpq2, Producto.class);
+		//query.setParameter(1, cod);
+
+		List<Producto> prods = query.getResultList();
+		return prods;
+
+	}
+	
+	public List<Producto> getCatLimpieza() {
+
+		String jpq2 = "SELECT c FROM Producto c WHERE categorias = 4";
+
+		Query query = em.createQuery(jpq2, Producto.class);
+		//query.setParameter(1, cod);
+
+		List<Producto> prods = query.getResultList();
+		return prods;
+
+	}
+	
+	public List<Producto> getCatRopa() {
+
+		String jpq2 = "SELECT c FROM Producto c WHERE categorias = 3";
+
+		Query query = em.createQuery(jpq2, Producto.class);
+		//query.setParameter(1, cod);
+
+		List<Producto> prods = query.getResultList();
+		return prods;
+
+	}
 
 }
