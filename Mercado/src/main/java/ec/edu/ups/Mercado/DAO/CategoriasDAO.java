@@ -34,17 +34,18 @@ public class CategoriasDAO {
 		em.remove(c);
 	}
 
-	public List<Categorias> getCategoriass(/*int codigo*/) {
-		
-		String jpq2 = "SELECT c FROM Categorias c " ;
+	public List<Categorias> getCategoriass(/* int codigo */) {
 
-		//nombre = nombre + "%";
+		String jpq2 = "SELECT c FROM Categorias c ";
+
+		// nombre = nombre + "%";
 		Query query = em.createQuery(jpq2, Categorias.class);
-		//query.setParameter(1, nombre);
-		
+		// query.setParameter(1, nombre);
+
 		List<Categorias> cats = query.getResultList();
 		return cats;
-		
+
 	}
-	
+
+
 }

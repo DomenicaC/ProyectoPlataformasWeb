@@ -17,6 +17,8 @@ public class Categorias implements Serializable{
 	private int codigo;
 	private String categoria;
 	private String descripcion;
+	private String urlImg;
+	private String url;
 
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Producto> productos;
@@ -51,6 +53,22 @@ public class Categorias implements Serializable{
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public String getUrlImg() {
+		return urlImg;
+	}
+
+	public void setUrlImg(String urlImg) {
+		this.urlImg = urlImg;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 }
