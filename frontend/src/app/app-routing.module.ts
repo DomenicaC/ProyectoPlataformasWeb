@@ -10,6 +10,7 @@ import {RegistrarComponent} from "./conponentes/registrar/registrar.component";
 import {Cat1Component} from "./conponentes/cat1/cat1.component";
 import {Cat2Component} from "./conponentes/cat2/cat2.component";
 import {Cat3Component} from "./conponentes/cat3/cat3.component";
+import {CategoriasComponent} from "./conponentes/categorias/categorias.component";
 
 const routes: Routes = [
 
@@ -42,7 +43,11 @@ const routes: Routes = [
   },
   {
     path: 'cat3', component: Cat3Component
+  },
+  {
+    path: 'categorias', component: CategoriasComponent
   }
+
 
 ];
 
