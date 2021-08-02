@@ -8,7 +8,7 @@
         <ul class="breadcrumb-tree">
           <li><a href="#">Home</a></li>
           <li><a href="#">All Categories</a></li>
-          <li class="active">{{producto.nombre}}</li>
+          <li class="active">{{producto.nombreCat}}</li>
         </ul>
       </div>
     </div>
@@ -26,15 +26,15 @@
     <div class="row d-flex">
       <!-- Product main img -->
       <div class="col-md-5 col-md-push-2">
-        <div id="product-main-img">
-          <ng-template>
+        <div >
+
             <div class="product-preview">
-              <img [src]="" alt="">
+              <img [src]="producto.urlImg" alt="{{producto.nombre}}" width="200px" class="card-img-top"  style="cursor:pointer;">
             </div>
-          </ng-template>
+
           <ng-template >
             <div class="product-preview" >
-              <img [src]="" alt="">
+
             </div>
           </ng-template>
         </div>
@@ -43,20 +43,16 @@
 
       <!-- Product thumb imgs -->
       <div class="col-md-2  col-md-pull-5 ">
-        <ng-template >
-          <div id="">
+
             <div  class="product-preview">
-              <img [src]="" alt="">
+
             </div>
-          </div>
-        </ng-template>
-        <ng-template >
-          <div id="product-imgs">
+
+
             <div class="product-preview">
-              <img >
+
             </div>
-          </div>
-        </ng-template>
+
       </div>
       <!-- /Product thumb imgs -->
 
@@ -99,7 +95,7 @@
 
           <ul class="product-links">
             <li>Category:</li>
-            <li><a href="#">{{producto?.idCat}}</a></li>
+            <li><a href="#">{{producto?.nombreCat}}</a></li>
           </ul>
 
           <ul class="product-links">

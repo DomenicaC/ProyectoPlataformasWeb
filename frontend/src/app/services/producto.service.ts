@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {Producto} from "../domain/producto";
+import {ProductoI} from "../Modelos/producto/producto.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -22,14 +23,14 @@ export class ProductoService {
     console.log("Listando Productos")
 
   }
+  /*----------------------------------------------------------------------------------*/
+  getSingleProduct(codigo:any): Observable<ProductoI>{
 
-  getSingleProduct(producto: Producto): Observable<any>{
-
-    const url = this.server_URL + '/Produc/unProd';
-    return this.http.post(url,producto.codigo)
+    let url = this.server_URL + '/Produc/unProd?cod='+codigo;
+    return this.http.get<ProductoI>(url);
     console.log("Producto Obtenido")
   }
-
+  /*----------------------------------------------------------------------------------*/
   getCat1Prod(): Observable<any> {
     const url = environment.server_URL + '/Produc/catLacteos';
     return this.http.get(url)
