@@ -1,5 +1,6 @@
 package ec.edu.ups.Mercado.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -36,6 +37,28 @@ public class ProductosService {
 	public List<Producto> buscarPorNombre(@PathParam("palabra") String palabra) {
 		List<Producto> p = productoON.getBuscarProducto(palabra);
 		return p;
+	}
+	
+	@GET
+	@Path("/Buscarprod")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<productoTemp> buscarProd(@QueryParam("palabra") String palabra) {
+		List<Producto> p = productoON.getBuscarProducto(palabra);
+		List<productoTemp> prods = new ArrayList<productoTemp>();
+		
+		for(Producto pr : p) {
+			productoTemp pt = new productoTemp();
+			pt.setCodigo(pr.getCodigo());
+			pt.setNombre(pr.getNombre());
+			pt.setDescripcion(pr.getDescripcion());
+			pt.setPrecioU(pr.getPrecioU());
+			pt.setStock(pr.getStock());
+			pt.setUrlImg(pr.getUrlImg());
+			pt.setNombreCat(pr.getCategorias().getCategoria());
+			prods.add(pt);
+		}
+		
+		return prods;
 	}
 
 	@GET
