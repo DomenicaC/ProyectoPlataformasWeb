@@ -46,9 +46,9 @@ public class ProductosON {
 		return daoProd.getBuscarProducto(p);
 	}
 	
-	public List<Producto> getSingleProd(int cod) {
+	public Producto getSingleProd(int cod) {
 
-		return daoProd.getSingleProd(cod);
+		return daoProd.find(cod);
 
 	}
 	

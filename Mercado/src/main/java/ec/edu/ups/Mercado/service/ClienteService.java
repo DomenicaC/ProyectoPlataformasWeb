@@ -36,27 +36,50 @@ public class ClienteService {
 	@POST
 	@Path("/Control/{usuario}/{contra}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String controlLoggin(@PathParam("usuario") String usuario, @PathParam("contra") String contra) {
+	public Mensajes controlLoggin(@PathParam("usuario") String usuario, @PathParam("contra") String contra) {
+		Mensajes msj = new Mensajes();
+		try {
+			if (usuario.contains("@mini.com")) {
+				Usuario u = usuarioON.getUsuarioLoggin(usuario, contra);
+				System.out.println("Ingreso Cliente");
+			}
+			msj.setCodigo(1);
+			msj.setMsj("OK");
+			System.out.println("Mensaje " + msj.getCodigo()+ " " + msj.getMsj());
+			return msj;
 
-		if (usuario.contains("@admin.mini.com")) {
-
-			Usuario u = usuarioON.getUsuarioLoggin(usuario, contra);
-			System.out.println("Ingreso admin");
-			return "Administrador";// poner el link de la pantalla principal de admin
-
-		} else if (usuario.contains("@bode.mini.com")) {
-			Usuario u = usuarioON.getUsuarioLoggin(usuario, contra);
-			System.out.println("Ingreso bodeguero");
-			return "bodeguero";// poner el link de la pantalla principal de el bodeguero
-
-		} else if (usuario.contains("@mini.com")) {
-			Usuario u = usuarioON.getUsuarioLoggin(usuario, contra);
-			System.out.println("Ingreso Cliente");
-			return "Cliente";// poner el link de la pantalla principal del usuario
-
-		} else {
-			return "Error";
+		} catch (Exception e) {
+			e.printStackTrace();
+			msj.setCodigo(99);
+			msj.setMsj("ERROR");
+			System.out.println("Mensaje " + msj.getCodigo()+ " " + msj.getMsj());
+			return msj;
 		}
 
 	}
+	
+	/*@POST
+	@Path("/Control/{usuario}/{contra}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String controlLoggin(@PathParam("usuario") String usuario, @PathParam("contra") String contra) {
+		Mensajes msj = new Mensajes();
+		try {
+			if (usuario.contains("@mini.com")) {
+				Usuario u = usuarioON.getUsuarioLoggin(usuario, contra);
+				System.out.println("Ingreso Cliente");
+			}
+			msj.setCodigo(1);
+			msj.setMsj("OK");
+			System.out.println("Mensaje " + msj.getCodigo()+ " " + msj.getMsj());
+			return "OK";
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			msj.setCodigo(99);
+			msj.setMsj("ERROR");
+			System.out.println("Mensaje " + msj.getCodigo()+ " " + msj.getMsj());
+			return "ERROR";
+		}
+
+	}*/
 }
