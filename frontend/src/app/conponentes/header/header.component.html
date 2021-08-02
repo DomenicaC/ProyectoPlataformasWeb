@@ -10,7 +10,7 @@
       </ul>
       <ul class="header-links pull-right">
         <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-        <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+        <li><a href="#"><i class="fa fa-user-o"></i> Mi Cuenta</a></li>
       </ul>
     </div>
   </div>
@@ -35,13 +35,13 @@
         <!-- SEARCH BAR -->
         <div class="col-md-6">
           <div class="header-search">
-            <form>
+            <form [formGroup]="buscarForm" (ngSubmit)="buscarP(buscarForm.value)">
               <select class="input-select">
-                <option value="0">Todas las categorias</option>
+                <option value="0">Categorias</option>
                 <option value="1">Category 01</option>
                 <option value="2">Category 02</option>
               </select>
-              <input class="input" placeholder="¿Deseas buscar algo?¡Hazlo aquí!">
+              <input class="input" type="input" placeholder="¿Deseas buscar algo?" id="buscar" formControlName="palabra">
               <button class="search-btn">Buscar</button>
             </form>
           </div>
