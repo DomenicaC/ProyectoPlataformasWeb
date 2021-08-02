@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
     //this.productoService.showMessage();
     this.productos = this.productoService.getAllProductos();
 
-
   }
+
+
 
 }

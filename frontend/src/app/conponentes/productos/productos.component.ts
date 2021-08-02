@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Producto} from "../../domain/producto";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
 import {ProductoService} from "../../services/producto.service";
 
 @Component({
@@ -11,6 +11,7 @@ import {ProductoService} from "../../services/producto.service";
 export class ProductosComponent implements OnInit {
 
   producto: Producto = new Producto();
+  productos: any;
   constructor(private router: Router,
               private productoService: ProductoService,
               private _route: ActivatedRoute) { }
@@ -21,10 +22,17 @@ export class ProductosComponent implements OnInit {
 
   getSingleP(){
     console.log(this.producto);
-    /*this.productoService.getSingleProduct(this.producto).subscribe(data => {
+    this.productoService.getSingleProduct(this.producto).subscribe(data => {
       console.log("Data " + data)
-    });*/
-    this.router.navigate(['productos/:3']);
+    });
+
+    let params: NavigationExtras = {
+      queryParams: {
+        producto: this.producto
+      }
+    }
+
+    this.router.navigate(['/productos',this.producto.codigo]);
   }
 
 }

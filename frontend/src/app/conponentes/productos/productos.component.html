@@ -8,8 +8,6 @@
         <ul class="breadcrumb-tree">
           <li><a href="#">Home</a></li>
           <li><a href="#">All Categories</a></li>
-          <li><a href="#">Accessories</a></li>
-          <li><a href="#"></a></li>
           <li class="active">{{producto.nombre}}</li>
         </ul>
       </div>
@@ -65,7 +63,7 @@
       <!-- Product details -->
       <div class="col-md-5">
         <div class="product-details">
-          <h2 class="product-name">{{producto.nombre}}</h2>
+          <h2 class="product-name">{{producto?.nombre}}</h2>
           <div>
             <div class="product-rating">
               <i class="fa fa-star"></i>
@@ -77,7 +75,7 @@
             <a class="review-link" href="#">10 Review(s) | Agrega tu comentario</a>
           </div>
           <div>
-            <h3 class="product-price">{{producto.precioU | currency:'USD'}} </h3>
+            <h3 class="product-price">{{producto?.precioU | currency:'USD'}} </h3>
             <span class="product-available">En Stock</span>
           </div>
           <h3>Descripción</h3>
@@ -101,7 +99,7 @@
 
           <ul class="product-links">
             <li>Category:</li>
-            <li><a href="#">{{producto.idCat}}</a></li>
+            <li><a href="#">{{producto?.idCat}}</a></li>
           </ul>
 
           <ul class="product-links">

@@ -23,12 +23,12 @@ export class ProductoService {
 
   }
 
-  /*getSingleProduct(producto: Producto): Observable<any>{
+  getSingleProduct(producto: Producto): Observable<any>{
 
-    const url = this.server_URL + '/Produc/unProd?';
-    return this.http.get(url)
+    const url = this.server_URL + '/Produc/unProd';
+    return this.http.post(url,producto.codigo)
     console.log("Producto Obtenido")
-  }*/
+  }
 
   getCat1Prod(): Observable<any> {
     const url = environment.server_URL + '/Produc/catLacteos';
