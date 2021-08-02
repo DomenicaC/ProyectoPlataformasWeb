@@ -5,6 +5,7 @@ import {ProductoService} from "../../services/producto.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ProductoI} from "../../Modelos/producto/producto.interface";
 import {map} from "rxjs/operators";
+import {CarritoService} from "../../services/carrito.service";
 
 @Component({
   selector: 'app-productos',
@@ -19,7 +20,8 @@ export class ProductosComponent implements OnInit {
 
   constructor(private router: Router,
               private productoService: ProductoService,
-              private activateRoute: ActivatedRoute) { }
+              private activateRoute: ActivatedRoute,
+              private carritoService: CarritoService) { }
 
   ngOnInit(): void {
 
@@ -31,7 +33,13 @@ export class ProductosComponent implements OnInit {
       this.producto = data;
     })
 
-  }
+    }
+
+    addCarrito(codigoP:any){
+
+    }
+
+
 
   /*getSingleP(){
     console.log(this.producto);

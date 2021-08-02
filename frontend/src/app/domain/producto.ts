@@ -5,5 +5,5 @@ export class Producto {
   precioU: number = 0.0;
   stock: number = 0;
   urlImg: String = '';
-  idCat: number = 0;
+  nombreCat: String = '';
 }
