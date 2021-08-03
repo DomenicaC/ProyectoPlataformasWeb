@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ProductoService} from "../../services/producto.service";
 import {count} from "rxjs/operators";
 import {Router} from "@angular/router";
+import {CarritoService} from "../../services/carrito.service";
+import {Producto} from "../../domain/producto";
 
 @Component({
   selector: 'app-home',
@@ -14,13 +16,19 @@ export class HomeComponent implements OnInit {
 
 
   constructor(private router: Router,
-              private productoService: ProductoService) { }
+              private productoService: ProductoService,
+              private carritoService: CarritoService) { }
 
   ngOnInit(): void {
     //this.productoService.showMessage();
     this.productos = this.productoService.getAllProductos();
 
 
+  }
+
+  addCarrito(producto: Producto){
+    this.carritoService.addCarrito(producto);
+    console.log("Producto Añadido " + producto)
   }
 
 

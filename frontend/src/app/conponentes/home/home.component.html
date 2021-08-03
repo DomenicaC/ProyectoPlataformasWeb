@@ -87,7 +87,8 @@
                   <button class="btn btn-outline-primary btn-sm btn-block"
                           [class.disabled]="producto.stock < 1"
                           [class.btn-outline-danger]="producto.stock < 1"
-                           [disabled]="producto.stock < 1">
+                           [disabled]="producto.stock < 1"
+                          (click)="addCarrito(producto.codigo)">
                     {{ producto.stock < 1 ? "NO STOCK" : "Add To Cart"}}
                   </button>
                 </div>

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container"[class.fa-expand]='expanded'>
   <div  class="text-center my-5">
     <h4>Tu carrito esta vacio</h4>
     <button class="btn btn-primary btn-lg mt-3" routerLink="/">Seguir Comprando</button>
@@ -19,28 +19,28 @@
           </tr>
           </thead>
           <tbody>
-          <tr >
+          <tr *ngFor="let item of productos">
             <td class="d-flex align-items-center justify-content-around" >
-              <img [src]="" alt="" height="60" class="order-1">
+              <img [src]="item.produtos.urlImg" alt="{{item.produtos.nombre}}" height="60" class="order-1">
               <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash" ></i></span>
             </td>
-            <td><p></p></td>
+            <td><p>{{item.produtos.nombre}}</p></td>
             <td>
-              <p></p>
+              <p>{{item.produtos.precio | currency:'USD'}}</p>
             </td>
             <td>
               <form>
                 <div class="value-button" id="decrease" >
                   <i class="fa fa-minus"></i>
                 </div>
-                <input type="number" id="number" [value]="" />
+                <input type="number" id="number" [value]="" [max]="item.productos.cantidad"  />
                 <div class="value-button" id="increase" >
                   <i class="fa fa-plus"></i>
                 </div>
               </form>
             </td>
             <td>
-              <p> | currency:'USD'}}</p>
+              <p> {{ item.cantidad * item.producto.precio | currency:'USD'}}</p>
             </td>
           </tr>
           <tr class="border-0">
@@ -48,7 +48,7 @@
             <td></td>
             <td></td>
             <td>TOTAL</td>
-            <td></td>
+            <td>{{cartTotal | currency:'USD'}}</td>
 
           </tr>
 

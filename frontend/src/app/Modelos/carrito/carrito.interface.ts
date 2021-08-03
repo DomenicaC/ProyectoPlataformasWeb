@@ -1,9 +1,9 @@
 export interface CarritoI {
   codigo: number;
-  codProd: String;
+  productos: String;
   nombreProd: String;
   cantidad: number;
-  precioU: number;
+  precio: number;
   total: number;
-  codFac: number;
+  factura: number;
 }
