@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {BuscarService} from "../../services/buscar.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Buscar} from "../../domain/buscar";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -19,12 +20,14 @@ export class HeaderComponent implements OnInit {
   ruta: any;
 
   buscar: Buscar = new Buscar();
-
+  sesion=environment.sesion;
+  
   constructor(private router: Router,
               private buscarService: BuscarService,
               private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.sesion)
   }
 
   buscarP(form:any){

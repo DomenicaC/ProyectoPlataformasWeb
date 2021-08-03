@@ -21,7 +21,7 @@ export class RegistrarComponent implements OnInit {
   registrarse(){
     console.log(this.registro);
     this.registrarService.registrar(this.registro).subscribe(data =>{
-      console.log("Data " + data)
+      console.log(data)
     });
 
     console.log("Usuario registrado")
