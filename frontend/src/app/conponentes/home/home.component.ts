@@ -26,9 +26,10 @@ export class HomeComponent implements OnInit {
 
   }
 
-  addCarrito(producto: Producto){
-    this.carritoService.addCarrito(producto);
-    console.log("Producto Añadido " + producto)
+  addCarrito(codigo: number){
+    this.carritoService.addCarrito(codigo);
+    console.log("Producto Añadido " + codigo)
+    
   }
 
 
