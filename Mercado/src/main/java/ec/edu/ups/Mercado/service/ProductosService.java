@@ -63,7 +63,7 @@ public class ProductosService {
 
 	@GET
 	@Path("/unProd") 
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)   
 	public productoTemp getSingleProd(@QueryParam("cod") int cod) {
 
 		Producto p = productoON.getSingleProd(cod);
