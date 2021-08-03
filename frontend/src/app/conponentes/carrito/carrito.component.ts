@@ -13,7 +13,7 @@ import {CarritoService} from "../../services/carrito.service";
 export class CarritoComponent implements OnInit {
 
   producto: Producto = new Producto();
-  productos: any[] = [];
+  productos: any = [];
   numProds = 0;
   expanded = false;
   expandedHeight: string = '';
@@ -24,6 +24,8 @@ export class CarritoComponent implements OnInit {
 
   datosCarri: CarritoI = new Carrito();
 
+
+  
   constructor(private router: Router,
               private carritoService: CarritoService,
               private activateRoute: ActivatedRoute,
@@ -33,7 +35,7 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.expandedHeight = '0';
+    /*this.expandedHeight = '0';
     this.carritoService.productAdded$.subscribe(data => {
       this.productos = data.productos;
       this.cartTotal = data.cartTotal;
@@ -44,11 +46,19 @@ export class CarritoComponent implements OnInit {
 
     })
 
-
-
     let codigoP = this.activateRoute.snapshot.paramMap.get('codigo')
-    console.log(codigoP)
+    console.log(codigoP)*/
 
+    for(var i=0;i<localStorage.length;i++){
+      var p=JSON.parse(localStorage.getItem(''+i) || '{}');
+      this.cartTotal=this.cartTotal+p["total"];
+      this.productos.push(p);
+    }
+
+    console.log(this.productos);
+    // this.carrito=JSON.parse(localStorage.getItem('0') || '{}');
+    // console.log(this.carrito)
+    //localStorage.clear();
   }
 
   eliminarProd(producto: Producto){

@@ -7,6 +7,7 @@ import {Producto} from "../domain/producto";
 import { ProductoI } from '../Modelos/producto/producto.interface';
 import { ProductoService } from './producto.service';
 import { variable } from '@angular/compiler/src/output/output_ast';
+import { Carrito } from '../domain/carrito';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class CarritoService {
 
   productos: any[] = [];
   totalCarrito = 0;
-
+  carrito:CarritoI=new Carrito;
   private productAddedSource = new Subject<any>();
   productAdded$ = this.productAddedSource.asObservable();
 
@@ -32,19 +33,26 @@ export class CarritoService {
     
   }
 
-  addCarrito(codigo:number, cantidad?:number){
+  addCarrito(codigo:number, cantidad:number){
 
     this.productoService.getSingleProduct(codigo).subscribe(prod => {
 
-     console.log(prod)
+     //console.log(prod)
 
-     var n= localStorage.length;
-     var s=""+n;
-     var datoProd;
-     localStorage.setItem(s,JSON.stringify(prod));
-     console.log(s)
-     console.log(localStorage.getItem('1'))
-     localStorage.clear();
+      var n= localStorage.length;
+      var s=""+n;
+
+      this.carrito.cantidad=cantidad;
+      this.carrito.codigo=1;
+      this.carrito.nombreProd=prod.nombre;
+      this.carrito.productos=codigo;
+      this.carrito.precio=prod.precioU;
+      this.carrito.total=prod.precioU*cantidad;
+
+      localStorage.setItem(s,JSON.stringify(this.carrito));
+     
+      //console.log(localStorage.getItem('0'))
+      
     //   let existe = false;
     // this.totalCarrito += prod.precioU;
     // // Si el producto aumenta la cantidad

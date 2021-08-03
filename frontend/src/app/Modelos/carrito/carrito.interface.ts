@@ -1,6 +1,6 @@
 export interface CarritoI {
   codigo: number;
-  productos: String;
+  productos: number;
   nombreProd: String;
   cantidad: number;
   precio: number;

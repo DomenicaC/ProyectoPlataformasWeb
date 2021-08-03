@@ -1,6 +1,6 @@
 export class Carrito {
   codigo: number = 0;
-  productos: String = '';
+  productos: number = 0;
   nombreProd: String = '';
   cantidad: number = 0;
   precio: number = 0;

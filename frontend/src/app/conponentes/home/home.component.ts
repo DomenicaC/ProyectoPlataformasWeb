@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     //this.productoService.showMessage();
     this.productos = this.productoService.getAllProductos();
-
+    
 
   }
 
   addCarrito(codigo: number){
-    this.carritoService.addCarrito(codigo);
+    this.carritoService.addCarrito(codigo,5);
     console.log("Producto Añadido " + codigo)
     
   }
