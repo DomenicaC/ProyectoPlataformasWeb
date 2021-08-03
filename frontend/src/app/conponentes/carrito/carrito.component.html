@@ -11,7 +11,7 @@
         <table class="table">
           <thead class="table-dark">
           <tr class="text-center">
-            <th>Imagen</th>
+            <th></th>
             <th>Nombre Producto</th>
             <th>Precio Producto</th>
             <th>Cantidad</th>
@@ -31,7 +31,7 @@
             <td>
               <form>
                
-                <input type="number" id="number" [value]="1" [max]="4" [min]="1"  />
+                <input type="number" id="number" [value]="item.cantidad" disabled/>
               </form>
             </td>
             <td>

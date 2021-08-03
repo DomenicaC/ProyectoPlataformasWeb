@@ -91,6 +91,9 @@
                           (click)="addCarrito(producto.codigo)">
                     {{ producto.stock < 1 ? "NO STOCK" : "Add To Cart"}}
                   </button>
+                  <p class="card-title">Cantidad</p>
+                  <input class="btn btn-outline-primary btn-sm btn-block" type="number" 
+                          id="{{producto.codigo}}" [value]="0" [min]="1" [max]="producto.stock"/>
                 </div>
               </div>
 

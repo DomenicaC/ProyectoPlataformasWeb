@@ -6,4 +6,5 @@ export class Carrito {
   precio: number = 0;
   total: number = 0;
   factura: number = 0;
+  stock:number=0;
 }

@@ -6,4 +6,5 @@ export interface CarritoI {
   precio: number;
   total: number;
   factura: number;
+  stock:number;
 }

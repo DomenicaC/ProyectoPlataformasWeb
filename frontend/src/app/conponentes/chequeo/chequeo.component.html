@@ -111,68 +111,32 @@
       <!-- Order Details -->
       <div class="col-md-5 order-details">
         <div class="section-title text-center">
-          <h3 class="title">Your Order</h3>
+          <h3 class="title">Factura</h3>
         </div>
         <div class="order-summary">
           <div class="order-col">
-            <div><strong>PRODUCT</strong></div>
+            <div><strong>Producto</strong></div>
             <div><strong>SubTotal</strong></div>
           </div>
-          <div class="order-products">
-            <div class="order-col" >
-              <div>numInCart}}x product.name}}</div>
-              <div>product.price*numInCart) | currency:'USD'}}</div>
+          <div class="order-products" >
+            <div class="order-col" *ngFor="let item of productos">
+              <div>{{item.nombreProd}}</div>
+              <div>{{item.total | currency:'USD'}}</div>
             </div>
-          </div>
-          <div class="order-col">
-            <div>Shipping</div>
-            <div><strong>FREE</strong></div>
           </div>
           <div class="order-col dropdown-divider">
             <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total">| currency:'USD'}}</strong></div>
-          </div>
-        </div>
-        <div class="payment-method">
-          <div class="input-radio">
-            <input type="radio" name="payment" id="payment-1">
-            <label for="payment-1">
-              <span></span>
-              Direct Bank Transfer
-            </label>
-            <div class="caption">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
-          <div class="input-radio">
-            <input type="radio" name="payment" id="payment-2">
-            <label for="payment-2">
-              <span></span>
-              Cheque Payment
-            </label>
-            <div class="caption">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
-          <div class="input-radio">
-            <input type="radio" name="payment" id="payment-3">
-            <label for="payment-3">
-              <span></span>
-              Paypal System
-            </label>
-            <div class="caption">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+            <div><strong class="order-total"> {{cartTotal| currency:'USD'}}</strong></div>
           </div>
         </div>
         <div class="input-checkbox">
           <input type="checkbox" id="terms">
           <label for="terms">
             <span></span>
-            I've read and accept the <a href="#">terms & conditions</a>
+            He leido y acepto los <a href="#">Terminos y Condiciones</a>
           </label>
         </div>
-        <button type="submit" class="btn-outline-danger btn-sm my-2 btn-block" [disabled]="  " >Place order</button>
+        <button type="submit" class="btn-outline-danger btn-sm my-2 btn-block" [disabled]="  " >Terminar Orden</button>
       </div>
       <!-- /Order Details -->
     </div>

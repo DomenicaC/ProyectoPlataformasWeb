@@ -19,7 +19,7 @@ export class CarritoComponent implements OnInit {
   expandedHeight: string = '';
   cartTotal = 0;
   heredar: string = '';
-
+  valor=0;
   changeDetectorRef: ChangeDetectorRef ;
 
   datosCarri: CarritoI = new Carrito();
@@ -49,6 +49,7 @@ export class CarritoComponent implements OnInit {
     let codigoP = this.activateRoute.snapshot.paramMap.get('codigo')
     console.log(codigoP)*/
 
+    console.log(localStorage.length);
     for(var i=0;i<localStorage.length;i++){
       var p=JSON.parse(localStorage.getItem(''+i) || '{}');
       this.cartTotal=this.cartTotal+p["total"];

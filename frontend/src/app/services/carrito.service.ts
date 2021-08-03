@@ -37,8 +37,6 @@ export class CarritoService {
 
     this.productoService.getSingleProduct(codigo).subscribe(prod => {
 
-     //console.log(prod)
-
       var n= localStorage.length;
       var s=""+n;
 
@@ -48,9 +46,25 @@ export class CarritoService {
       this.carrito.productos=codigo;
       this.carrito.precio=prod.precioU;
       this.carrito.total=prod.precioU*cantidad;
+      this.carrito.stock=prod.stock;
 
-      localStorage.setItem(s,JSON.stringify(this.carrito));
-     
+      console.log(prod.precioU*cantidad);
+      for(var i=0;i<localStorage.length;i++){
+        var p=JSON.parse(localStorage.getItem(''+i) || '{}');
+        
+        if(p["productos"]==codigo){
+          this.totalCarrito=1;
+          
+        }
+      }
+
+      if(this.totalCarrito!=1){
+        localStorage.setItem(s,JSON.stringify(this.carrito));
+        
+      }else{
+        console.log(this.totalCarrito)
+        this.totalCarrito=0;
+      }
       //console.log(localStorage.getItem('0'))
       
     //   let existe = false;
