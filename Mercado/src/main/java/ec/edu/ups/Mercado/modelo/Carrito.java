@@ -28,7 +28,7 @@ public class Carrito {
 	@ManyToOne
 	@JoinColumn(name = "Prod_codigo")
 	private Producto productos;
-
+  
 	public int getCodigo() {
 		return codigo;
 	}
