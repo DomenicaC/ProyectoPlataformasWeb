@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  server_URL: "http://localhost:8080/Mercado/ws"
+  server_URL: "http://localhost:8080/Mercado/ws",
+  sesion:false
 };
 
 /*

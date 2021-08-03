@@ -5,6 +5,7 @@ import {LoginService} from "../../services/login.service";
 import {LoginI} from "../../Modelos/login/login.interface";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ResponseI} from "../../Modelos/login/response.interface";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -35,6 +36,8 @@ export class LoginComponent implements OnInit {
         console.log("Correo o contraseña incorrecta")
       }else if(dataResponse.msj == "OK"){
         console.log(dataResponse.msj)
+        environment.sesion=true;
+        console.log(environment.sesion)
         this.router.navigate(['']);
       }
     });
