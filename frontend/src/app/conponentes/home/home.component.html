@@ -8,7 +8,7 @@
       <div class="col-md-4 col-xs-6">
         <div class="shop">
           <div class="shop-img">
-            <img src="./../../../assets/img/shop01.png" alt="">
+            <img width="300" height="250" src="./../../../assets/img/lacteos.jpg" alt="">
           </div>
           <div class="shop-body">
             <h3>Lacteos<br/> Nuevos</h3>
@@ -22,7 +22,7 @@
       <div class="col-md-4 col-xs-6">
         <div class="shop">
           <div class="shop-img">
-            <img src="./../../../assets/img/shop03.png" alt="">
+            <img width="300" height="250" src="./../../../assets/img/limpieza.jpg" alt="">
           </div>
           <div class="shop-body">
             <h3>Limpieza<br/> Nuevos</h3>
@@ -36,7 +36,7 @@
       <div class="col-md-4 col-xs-6">
         <div class="shop">
           <div class="shop-img">
-            <img src="./../../../assets/img/shop02.png" alt="">
+            <img width="300" height="250" src="./../../../assets/img/ropa.jpg" alt="">
           </div>
           <div class="shop-body">
             <h3>Ropa <br/> Nuevos</h3>
@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-md-4 col-sm-6" *ngFor="let producto of productos  | async">
             <div class="card my-2">
-              <img [src]="producto.urlImg" [routerLink]="['/productos',producto.codigo]"  alt="{{producto.nombre}}" width="200px" class="card-img-top"  style="cursor:pointer;">
+              <img width="500" height="300" [src]="producto.urlImg" [routerLink]="['/productos',producto.codigo]"  alt="{{producto.nombre}}" width="200px" class="card-img-top"  style="cursor:pointer;">
               <div class="card-header">
                 <div class="card-title">
                   <p>{{producto.nombre | titlecase}}</p>
@@ -89,10 +89,10 @@
                           [class.btn-outline-danger]="producto.stock < 1"
                            [disabled]="producto.stock < 1"
                           (click)="addCarrito(producto.codigo)">
-                    {{ producto.stock < 1 ? "NO STOCK" : "Add To Cart"}}
+                    {{ producto.stock < 1 ? "NO STOCK" : "Añadir al carrito"}}
                   </button>
                   <p class="card-title">Cantidad</p>
-                  <input class="btn btn-outline-primary btn-sm btn-block" type="number" 
+                  <input class="btn btn-outline-primary btn-sm btn-block" type="number"
                           id="{{producto.codigo}}" [value]="0" [min]="1" [max]="producto.stock"/>
                 </div>
               </div>

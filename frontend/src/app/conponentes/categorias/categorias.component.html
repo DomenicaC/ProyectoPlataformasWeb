@@ -1,8 +1,11 @@
+<div class="section">
+  <!-- container -->
+  <div class="container">
 <div class="col-md-12">
   <div class="row">
     <div class="col-md-4 col-sm-6" *ngFor="let categoria of categorias  | async">
       <div class="card my-2">
-        <img [src]="categoria.urlImg"  alt="{{categoria.categoria}}" width="200px" class="card-img-top"  style="cursor:pointer;">
+        <img width="500" height="300" [src]="categoria.urlImg"  alt="{{categoria.categoria}}" width="200px" class="card-img-top"  style="cursor:pointer;">
         <div class="card-header">
           <div class="card-title">
             <h3>{{categoria.categoria}}</h3>
@@ -25,6 +28,9 @@
 
     </div>
 
+  </div>
+
+</div>
   </div>
 
 </div>

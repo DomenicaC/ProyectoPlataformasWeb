@@ -37,11 +37,6 @@
         <div class="col-md-6">
           <div class="header-search">
             <form [formGroup]="buscarForm" (ngSubmit)="buscarP(buscarForm.value)">
-              <select class="input-select">
-                <option value="0">Categorias</option>
-                <option value="1">Category 01</option>
-                <option value="2">Category 02</option>
-              </select>
               <input class="input" type="input" placeholder="¿Deseas buscar algo?" id="buscar" formControlName="palabra">
               <button class="search-btn">Buscar</button>
             </form>
