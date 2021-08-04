@@ -8,6 +8,8 @@ import { ProductoI } from '../Modelos/producto/producto.interface';
 import { ProductoService } from './producto.service';
 import { variable } from '@angular/compiler/src/output/output_ast';
 import { Carrito } from '../domain/carrito';
+import { MatDialog } from "@angular/material/dialog";
+import { MensajeComponent } from "../conponentes/mensaje/mensaje.component";
 
 @Injectable({
   providedIn: 'root'
@@ -23,14 +25,15 @@ export class CarritoService {
   private server_URL = environment.server_URL;
 
   constructor(private  http: HttpClient,
-              private productoService:ProductoService) { }
+              private productoService:ProductoService,
+              private matDialog: MatDialog) { }
 
   addProducto(codigo:any): Observable<CarritoI>{
 
     let url = this.server_URL + '/Produc/unProd?cod='+codigo;
-    
+
     return this.http.get<CarritoI>(url);
-    
+
   }
 
   addCarrito(codigo:number, cantidad:number){
@@ -51,22 +54,23 @@ export class CarritoService {
       console.log(prod.precioU*cantidad);
       for(var i=0;i<localStorage.length;i++){
         var p=JSON.parse(localStorage.getItem(''+i) || '{}');
-        
+
         if(p["productos"]==codigo){
           this.totalCarrito=1;
-          
+
         }
       }
 
       if(this.totalCarrito!=1){
         localStorage.setItem(s,JSON.stringify(this.carrito));
-        
+        this.matDialog.open(MensajeComponent, {'data':'El producto ' + prod.nombre + ' fue ingresado exitosamente'});
       }else{
         console.log(this.totalCarrito)
         this.totalCarrito=0;
+        this.matDialog.open(MensajeComponent, {'data':'El producto ' + prod.nombre + ' ya esta ingresado en su carrito'});
       }
       //console.log(localStorage.getItem('0'))
-      
+
     //   let existe = false;
     // this.totalCarrito += prod.precioU;
     // // Si el producto aumenta la cantidad
@@ -82,7 +86,7 @@ export class CarritoService {
 
     // //Añadir un nuevo producto si no se ha añadido antes
     // if (!existe){
-     
+
 
     //   this.productos.push({
     //     producto: prod,
@@ -93,7 +97,7 @@ export class CarritoService {
     // this.productAddedSource.next({productos: this.productos, totalCarrito: this.totalCarrito})
 
     })
-    
+
 
   }
 

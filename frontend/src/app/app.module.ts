@@ -21,7 +21,8 @@ import {Cat3Component} from "./conponentes/cat3/cat3.component";
 import { CategoriasComponent } from './conponentes/categorias/categorias.component';
 import { BuscarComponent } from './conponentes/buscar/buscar.component';
 import { ErrorComponent } from './conponentes/error/error.component';
-
+import { MensajeComponent } from './conponentes/mensaje/mensaje.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ErrorComponent } from './conponentes/error/error.component';
     RegistrarComponent,
     CategoriasComponent,
     BuscarComponent,
-    ErrorComponent
+    ErrorComponent,
+    MensajeComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,7 @@ import { ErrorComponent } from './conponentes/error/error.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
