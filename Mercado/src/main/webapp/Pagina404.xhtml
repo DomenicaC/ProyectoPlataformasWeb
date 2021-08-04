@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="MenuBodeguero.xhtml">
+	<ui:define name="title">
+       Pagina 404 Error 
+    </ui:define>
+	<ui:define name="contenido">
+
+		<div class="content-wrapper" style="min-height: 1000px;">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+			<div class="container-fluid">
+				<div class="row mb-2">
+					<div class="col-sm-6">
+						<h1>404 Página Error</h1>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb float-sm-right">
+							<li class="breadcrumb-item"><a
+								href="http://localhost:8080/Mercado/faces/CrearBodeguero.xhtml">Home</a></li>
+							<li class="breadcrumb-item active">404 Página Error</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+			<!-- /.container-fluid --> </section>
+
+			<!-- Main content -->
+			<section class="content">
+			<div class="error-page">
+				<h2 class="headline text-warning">404</h2>
+
+				<div class="error-content">
+					<h3>
+						<i class="fas fa-exclamation-triangle text-warning"></i>¡Lo
+						siento! Esta página no pudo ser encontrada
+					</h3>
+
+					<p>
+						La página que buscabas no pudo ser encontrada. Por favor verifica
+						con tu adimistrador si tienes los permisos necesarios para
+						acceder. <br /> ¿Deseas volver al menu principal? <a
+							href="http://localhost:8080/Mercado/faces/MenuBodeguero.xhtml">Volver
+							al inicio</a>
+					</p>
+
+
+				</div>
+				<!-- /.error-content -->
+			</div>
+			<!-- /.error-page --> </section>
+			<!-- /.content -->
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>
