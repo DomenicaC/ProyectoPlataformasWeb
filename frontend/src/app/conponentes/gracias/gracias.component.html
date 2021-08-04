@@ -7,37 +7,38 @@
         <hr>
         <p>
 
-        <p>codigo de la factura : <strong>rderId}}</strong></p>
+        
       </div>
 
       <table class="table table-striped">
         <thead>
         <tr>
-          <th>Imagen</th>
+          <th></th>
           <th>Nombre Producto</th>
           <th>Precio</th>
           <th>Cantidad</th>
         </tr>
         </thead>
         <tbody>
-        <tr >
+        <tr *ngFor="let item of productos">
           <td>
-            <img [src]="" alt="p.title}}" class="img-thumbnail" width="100px">
+           
           </td>
-          <td>p.title}}</td>
-          <td>p.price | currency:'USD'}}</td>
-          <td>p.quantityOrdered}}</td>
+          <td>{{item.nombreProd}}</td>
+          <td>{{item.precio | currency:'USD'}}</td>
+          <td>{{item.cantidad}}</td>
         </tr>
 
         <tr class="border-0">
           <td style="border: none;"></td>
           <td></td>
           <td>TOTAL</td>
-          <td>cartTotal | currency:'USD'}}</td>
+          <td>{{cartTotal | currency:'USD'}}</td>
 
         </tr>
         </tbody>
       </table>
+      <button class="btn btn-primary btn-lg mt-3"  ><a href="http://localhost:4200/">Seguir Comprando</a></button>
     </div>
   </div>
 </div>

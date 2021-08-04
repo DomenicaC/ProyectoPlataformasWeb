@@ -19,6 +19,7 @@ export class GraciasComponent implements OnInit {
       this.productos.push(p);
     }
 
-  }
+    localStorage.clear();
 
+  }
 }
