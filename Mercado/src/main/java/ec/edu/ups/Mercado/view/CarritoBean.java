@@ -24,12 +24,10 @@ public class CarritoBean implements Serializable {
 
 	@PostConstruct
 	private void init() {
-		
 		carritos = carritoON.getCarritos();
 		System.out.println(carritos);
 		newCarrito = new Carrito();
 		newCarrito.setProductos(new Producto());
-		
 	}
 
 	public Carrito getNewCarrito() {
