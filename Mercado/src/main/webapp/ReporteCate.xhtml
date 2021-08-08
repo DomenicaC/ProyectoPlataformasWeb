@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="template.xhtml">
+	<ui:define name="title">
+       Reporte de productos por categorias
+    </ui:define>
+	<ui:define name="contenido">
+
+		<h:dataTable value="#{productoBean.prodCat}" var="prod"
+			class="table table-striped">
+
+			<h:column>
+				<f:facet name="header">Categoria</f:facet>
+			#{prod.categorias.categoria}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Codigo Producto</f:facet>
+			#{prod.codigo}
+		</h:column>
+
+			<h:column>
+				<f:facet name="header">Nombre Producto</f:facet>
+			#{prod.nombre}
+		</h:column>
+
+			<h:column>
+				<f:facet name="header">Descripción</f:facet>
+			#{prod.descripcion}
+		</h:column>
+
+
+		</h:dataTable>
+
+	</ui:define>
+</ui:composition>
+
+</html>

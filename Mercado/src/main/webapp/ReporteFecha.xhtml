@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition template="template.xhtml">
+	<ui:define name="title">
+       Reporte de productos por Fechas
+    </ui:define>
+	<ui:define name="contenido">
+
+		<h:dataTable value="#{carritoBean.carritos}" var="car"
+			class="table table-striped">
+
+			<h:column>
+				<f:facet name="header">Fecha de Factura</f:facet>
+			#{car.factura.fecha}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Codigo de Factura</f:facet>
+			#{car.factura.ruc}
+		</h:column>
+
+			<h:column>
+				<f:facet name="header">Nombre Producto</f:facet>
+			#{car.nombreProd}
+		</h:column>
+
+			<h:column>
+				<f:facet name="header">Cantidad Producto</f:facet>
+			#{car.cantidad}
+		</h:column>
+
+			<h:column>
+				<f:facet name="header">Precio Producto</f:facet>
+			#{car.precio}
+		</h:column>
+
+			<h:column>
+				<f:facet name="header">Subtotal Producto</f:facet>
+			#{car.total}
+		</h:column>
+
+
+		</h:dataTable>
+
+	</ui:define>
+</ui:composition>
+
+</html>

@@ -36,7 +36,7 @@ public class ProductoDAO {
 
 	public List<Producto> getProductos() {
 
-		String jpq2 = "SELECT c FROM Producto c ";
+		String jpq2 = "SELECT c FROM Producto c ORDER BY categorias";
 
 		Query query = em.createQuery(jpq2, Producto.class);
 
@@ -47,7 +47,7 @@ public class ProductoDAO {
 
 	public List<Producto> getBuscarProducto(String producto) {
 
-		String sql = "SELECT p FROM Producto p" + " where nombre like  ?1 ";
+		String sql = "SELECT p FROM Producto p WHERE nombre like  ?1 ORDER BY categorias";
 
 		producto = "%" + producto + "%";
 		Query q = em.createQuery(sql, Producto.class);
@@ -67,6 +67,16 @@ public class ProductoDAO {
 		List<Producto> prods = query.getResultList();
 		return prods;
 
+	}
+
+	public List<Producto> getProdCat() {
+		String jpq2 = "SELECT c FROM Producto c ORDER BY categorias";
+
+		Query query = em.createQuery(jpq2, Producto.class);
+		// query.setParameter(1, cod);
+
+		List<Producto> prods = query.getResultList();
+		return prods;
 	}
 
 	public List<Producto> getCatLacteos() {

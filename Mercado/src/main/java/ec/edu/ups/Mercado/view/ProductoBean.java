@@ -17,16 +17,26 @@ public class ProductoBean {
 
 	private Producto newProducto = new Producto();
 	private List<Producto> prods;
+	private List<Producto> ProdCat;
 
 	@Inject
 	private ProductosON onProducto;
 
 	@PostConstruct
 	public void init() {
+		ProdCat = onProducto.getProdCat();
 		prods = onProducto.getProductos();
 		System.out.println(prods);
 		newProducto = new Producto();
 		newProducto.setCategorias(new Categorias());
+	}
+
+	public List<Producto> getProdCat() {
+		return ProdCat;
+	}
+
+	public void setProdCat(List<Producto> prodCat) {
+		ProdCat = prodCat;
 	}
 
 	public Producto getNewProducto() {
@@ -65,7 +75,5 @@ public class ProductoBean {
 		return 0;
 
 	}
-	
-	
 
 }

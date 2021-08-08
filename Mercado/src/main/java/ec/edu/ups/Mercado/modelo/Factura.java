@@ -1,5 +1,6 @@
 package ec.edu.ups.Mercado.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -88,6 +89,14 @@ public class Factura {
 
 	public void setCarritos(List<Carrito> carritos) {
 		this.carritos = carritos;
+	}
+	
+	public void addDetalle(Carrito carrito) {
+		
+		if(carritos == null) 
+			carritos = new ArrayList<Carrito>();
+		
+		carritos.add(carrito);
 	}
 
 }

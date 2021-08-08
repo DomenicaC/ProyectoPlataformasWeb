@@ -1,5 +1,7 @@
 package ec.edu.ups.Mercado.bussines;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -16,4 +18,8 @@ public class CarritoON {
 		
 		carritoDAO.insertarFactura(c);
 	}
-}
+	
+	public List<Carrito> getCarritos(){
+		return carritoDAO.getCarritos();
+	}
+} 

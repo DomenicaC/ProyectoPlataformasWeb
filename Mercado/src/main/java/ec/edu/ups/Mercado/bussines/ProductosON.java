@@ -52,6 +52,10 @@ public class ProductosON {
 
 	}
 	
+	public List<Producto> getProdCat() {
+		return daoProd.getProdCat();
+	}
+	
 	public List<Producto> getLacteos() {
 
 		return daoProd.getCatLacteos();
