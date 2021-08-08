@@ -72,14 +72,14 @@ public class FacProvBEAN implements Serializable {
 
 	public String doGuardarFacProv() {
 		
-		/*List<FacDetProv> productos=newFacProv.getDetalles();
+		List<FacDetProv> productos=newFacProv.getDetalles();
 		
 		for(int i=0;i<productos.size();i++) {
 			Producto p = facProvON.getProducto(productos.get(i).getCodigoProducto());
 			p.setStock(productos.get(i).getCantidad()+p.getStock());
 			prodON.actualizarProd(p);
 			
-		}*/
+		}
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
 		String fechaComoCadena = sdf.format(new Date());
