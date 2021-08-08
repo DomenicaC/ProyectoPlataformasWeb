@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {BuscarService} from "../../services/buscar.service";
+import {CarritoService} from "../../services/carrito.service";
 
 @Component({
   selector: 'app-buscar',
@@ -12,7 +13,8 @@ export class BuscarComponent implements OnInit {
   produtos: any;
   constructor(private router: Router,
               private buscarService: BuscarService,
-              private activateRoute: ActivatedRoute) { }
+              private activateRoute: ActivatedRoute,
+              private carritoService: CarritoService) { }
 
   ngOnInit(): void {
     let palabra = this.activateRoute.snapshot.paramMap.get('palabra')
@@ -21,6 +23,17 @@ export class BuscarComponent implements OnInit {
 
       this.produtos = data;
     });
+  }
+
+  addCarrito(codigo: number){
+
+    var d=(document.getElementById(""+codigo) as HTMLInputElement).value;
+
+    var num=parseInt(d);
+    console.log(num);
+    this.carritoService.addCarrito(codigo,num);
+    console.log("Producto Añadido " + codigo)
+
   }
 
 }

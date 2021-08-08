@@ -84,6 +84,9 @@
 
               <div class="row d-flex justify-content-center border-primary my-3">
                 <div class="col-md-6 ">
+                  <p class="card-title">Cantidad</p>
+                  <input class="btn btn-outline-primary btn-sm btn-block" type="number"
+                         id="{{producto.codigo}}" [value]="0" [min]="1" [max]="producto.stock"/>
                   <button class="btn btn-outline-primary btn-sm btn-block"
                           [class.disabled]="producto.stock < 1"
                           [class.btn-outline-danger]="producto.stock < 1"
@@ -91,9 +94,6 @@
                           (click)="addCarrito(producto.codigo)">
                     {{ producto.stock < 1 ? "NO STOCK" : "Añadir al carrito"}}
                   </button>
-                  <p class="card-title">Cantidad</p>
-                  <input class="btn btn-outline-primary btn-sm btn-block" type="number"
-                          id="{{producto.codigo}}" [value]="0" [min]="1" [max]="producto.stock"/>
                 </div>
               </div>
 

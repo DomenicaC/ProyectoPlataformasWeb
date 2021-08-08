@@ -81,26 +81,30 @@
 
           <div class="add-to-cart">
             <div class="qty-label">
-              Cantidad
-              <div class="input-number">
-                <input #quantity [max]="producto.stock" [min]="producto.stock >= 1 ? producto.stock : 0"
-                       readonly type="number" value="{{producto.stock >= 1 ? 1 : 0}}">
-                <span  class="qty-up">+</span>
-                <span  class="qty-down">-</span>
+              <STRONG>Cantidad</STRONG>
+              <div class="">
+
+                <input class="btn btn-outline-primary btn-sm btn-block" type="number"
+                       id="{{producto.codigo}}" [value]="0" [min]="1" [max]="producto.stock"/>
               </div>
             </div><br/><br/>
-            <button  class="add-to-cart-btn"><i
-              class="fa fa-shopping-cart"></i>Añadir al carrito
+            <button class="add-to-cart-btn"
+                    [class.disabled]="producto.stock < 1"
+                    [class.btn-outline-danger]="producto.stock < 1"
+                    [disabled]="producto.stock < 1"
+                    (click)="addCarrito(producto.codigo)"><i
+              class="fa fa-shopping-cart"></i>
+              {{ producto.stock < 1 ? "NO STOCK" : "Añadir al carrito"}}
             </button>
           </div>
 
           <ul class="product-links">
-            <li>Category:</li>
+            <li>Categoria:</li>
             <li><a href="#">{{producto?.nombreCat}}</a></li>
           </ul>
 
           <ul class="product-links">
-            <li>Share:</li>
+            <li>Comparte:</li>
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>

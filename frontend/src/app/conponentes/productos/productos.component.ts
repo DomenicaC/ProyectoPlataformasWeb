@@ -35,9 +35,16 @@ export class ProductosComponent implements OnInit {
 
     }
 
-    addCarrito(codigoP:any){
+  addCarrito(codigo: number){
 
-    }
+    var d=(document.getElementById(""+codigo) as HTMLInputElement).value;
+
+    var num=parseInt(d);
+    console.log(num);
+    this.carritoService.addCarrito(codigo,num);
+    console.log("Producto Añadido " + codigo)
+
+  }
 
 
 
