@@ -11,8 +11,9 @@
             <img width="300" height="250" src="./../../../assets/img/lacteos.jpg" alt="">
           </div>
           <div class="shop-body">
-            <h3>Lacteos<br/> Nuevos</h3>
-            <a href="http://localhost:4200/cat1" class="cta-btn">Compra Ahora <i class="fa fa-arrow-circle-right"></i></a>
+            <h3>Lacteos<br /> Nuevos</h3>
+            <a href="http://localhost:4200/cat1" class="cta-btn">Compra Ahora <i
+                class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
@@ -25,8 +26,9 @@
             <img width="300" height="250" src="./../../../assets/img/limpieza.jpg" alt="">
           </div>
           <div class="shop-body">
-            <h3>Limpieza<br/> Nuevos</h3>
-            <a href="http://localhost:4200/cat2" class="cta-btn">Compra Ahora <i class="fa fa-arrow-circle-right"></i></a>
+            <h3>Limpieza<br /> Nuevos</h3>
+            <a href="http://localhost:4200/cat2" class="cta-btn">Compra Ahora <i
+                class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
@@ -39,8 +41,9 @@
             <img width="300" height="250" src="./../../../assets/img/ropa.jpg" alt="">
           </div>
           <div class="shop-body">
-            <h3>Ropa <br/> Nuevos</h3>
-            <a href="http://localhost:4200/cat3" class="cta-btn">Compra Ahora <i class="fa fa-arrow-circle-right"></i></a>
+            <h3>Ropa <br /> Nuevos</h3>
+            <a href="http://localhost:4200/cat3" class="cta-btn">Compra Ahora <i
+                class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
@@ -71,7 +74,8 @@
         <div class="row">
           <div class="col-md-4 col-sm-6" *ngFor="let producto of productos  | async">
             <div class="card my-2">
-              <img width="500" height="300" [src]="producto.urlImg" [routerLink]="['/productos',producto.codigo]"  alt="{{producto.nombre}}" width="200px" class="card-img-top"  style="cursor:pointer;">
+              <img width="500" height="300" [src]="producto.urlImg" [routerLink]="['/productos',producto.codigo]"
+                alt="{{producto.nombre}}" width="200px" class="card-img-top" style="cursor:pointer;">
               <div class="card-header">
                 <div class="card-title">
                   <p>{{producto.nombre | titlecase}}</p>
@@ -85,13 +89,11 @@
               <div class="row d-flex justify-content-center border-primary my-3">
                 <div class="col-md-6 ">
                   <p class="card-title">Cantidad</p>
-                  <input class="btn btn-outline-primary btn-sm btn-block" type="number"
-                         id="{{producto.codigo}}" [value]="0" [min]="1" [max]="producto.stock"/>
-                  <button class="btn btn-outline-primary btn-sm btn-block"
-                          [class.disabled]="producto.stock < 1"
-                          [class.btn-outline-danger]="producto.stock < 1"
-                           [disabled]="producto.stock < 1"
-                          (click)="addCarrito(producto.codigo)">
+                  <input class="btn btn-outline-primary btn-sm btn-block" type="number" id="{{producto.codigo}}"
+                    [value]="0" [min]="1" [max]="producto.stock" />
+                  <button class="btn btn-outline-primary btn-sm btn-block" [class.disabled]="producto.stock < 1"
+                    [class.btn-outline-danger]="producto.stock < 1" [disabled]="producto.stock < 1"
+                    (click)="addCarrito(producto.codigo)">
                     {{ producto.stock < 1 ? "NO STOCK" : "Añadir al carrito"}}
                   </button>
                 </div>

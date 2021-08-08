@@ -1,5 +1,6 @@
 <!-- HEADER -->
 <header>
+  <!-- Pagina de cabecera donde se mostraran los menus para la navegacion -->
   <!-- TOP HEADER -->
   <div id="top-header">
     <div class="container">
@@ -10,8 +11,10 @@
       </ul>
       <ul class="header-links pull-right">
         <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-        <li><a href="http://localhost:4200/login"><i class="fa fa-user-o"></i> {{ sesion == false ? "Mi cuenta" : ""}}</a></li>
-        <li><a href="http://localhost:4200"><i class="fa fa-user-o"></i>{{ sesion == true ? "Cerrar Sesion" : ""}}</a></li>
+        <li><a href="http://localhost:4200/login"><i class="fa fa-user-o"></i>
+            {{ sesion == false ? "Mi cuenta" : ""}}</a></li>
+        <li><a href="http://localhost:4200"><i class="fa fa-user-o"></i>{{ sesion == true ? "Cerrar Sesion" : ""}}</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -33,11 +36,12 @@
         </div>
         <!-- /LOGO -->
 
-        <!-- SEARCH BAR -->
+        <!-- Barra de busqueda -->
         <div class="col-md-6">
           <div class="header-search">
             <form [formGroup]="buscarForm" (ngSubmit)="buscarP(buscarForm.value)">
-              <input class="input" type="input" placeholder="¿Deseas buscar algo?" id="buscar" formControlName="palabra">
+              <input class="input" type="input" placeholder="¿Deseas buscar algo?" id="buscar"
+                formControlName="palabra">
               <button class="search-btn">Buscar</button>
             </form>
           </div>
@@ -48,23 +52,24 @@
         <div class="col-md-3 clearfix">
           <div class="header-ctn">
 
-            <!-- Cart -->
+            <!-- Seccion del carrito -->
             <div class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor:pointer;" href="http://localhost:4200/carrito">
+              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="cursor:pointer;"
+                href="http://localhost:4200/carrito">
                 <i class="fa fa-shopping-cart"></i>
                 <span>Tu carrito</span>
               </a>
               <div class="cart-dropdown">
-                <div class="cart-list" >
-                  <div class="product-widget" >
+                <div class="cart-list">
+                  <div class="product-widget">
                     <div class="product-img">
                       <img [src]="" width="20px">
                     </div>
                     <div class="product-body">
                       <h3 class="product-name"><a href="#"></a></h3>
-                      <h4 class="product-price"><span class="qty"> x </span>  </h4>
+                      <h4 class="product-price"><span class="qty"> x </span> </h4>
                     </div>
-                    <button class="delete" ><i class="fa fa-close"></i></button>
+                    <button class="delete"><i class="fa fa-close"></i></button>
                   </div>
                 </div>
                 <div class="cart-summary">
@@ -73,13 +78,13 @@
                 </div>
                 <div class="cart-btns">
                   <a routerLink="/cart">Ver Carrito</a>
-                  <a routerLink="/checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                  <a routerLink="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
               </div>
             </div>
             <!-- /Cart -->
 
-            <!-- Menu Toogle -->
+            <!-- Menu -->
             <div class="menu-toggle">
               <a href="#">
                 <i class="fa fa-bars"></i>
@@ -99,7 +104,7 @@
 </header>
 <!-- /HEADER -->
 
-<!-- NAVIGATION -->
+<!-- Menu de navegacion -->
 <nav id="navigation">
   <!-- container -->
   <div class="container">
@@ -119,4 +124,3 @@
   <!-- /container -->
 </nav>
 <!-- /NAVIGATION -->
-

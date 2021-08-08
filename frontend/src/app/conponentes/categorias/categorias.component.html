@@ -1,36 +1,37 @@
 <div class="section">
   <!-- container -->
   <div class="container">
-<div class="col-md-12">
-  <div class="row">
-    <div class="col-md-4 col-sm-6" *ngFor="let categoria of categorias  | async">
-      <div class="card my-2">
-        <img width="500" height="300" [src]="categoria.urlImg"  alt="{{categoria.categoria}}" width="200px" class="card-img-top"  style="cursor:pointer;">
-        <div class="card-header">
-          <div class="card-title">
-            <h3>{{categoria.categoria}}</h3>
-          </div>
-        </div>
-        <div class="card-body">
-          <h4>{{categoria.descripcion}}</h4>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4 col-sm-6" *ngFor="let categoria of categorias  | async">
+          <div class="card my-2">
+            <img width="500" height="300" [src]="categoria.urlImg" alt="{{categoria.categoria}}" width="200px"
+              class="card-img-top" style="cursor:pointer;">
+            <div class="card-header">
+              <div class="card-title">
+                <h3>{{categoria.categoria}}</h3> <!-- Donde se mostrara el nombre de la categoria -->
+              </div>
+            </div>
+            <div class="card-body">
+              <h4>{{categoria.descripcion}}</h4> <!-- Donde se mostrara descripcion de la categoria -->
 
-        </div>
+            </div>
 
-        <div class="row d-flex justify-content-center border-primary my-3">
-          <div class="col-md-6 ">
-            <a href={{categoria.url}} class="btn btn-outline-primary btn-sm btn-block">
-              Listar Productos
-            </a>
+            <div class="row d-flex justify-content-center border-primary my-3">
+              <div class="col-md-6 ">
+                <a href={{categoria.url}} class="btn btn-outline-primary btn-sm btn-block">
+                  Listar Productos
+                </a>
+              </div>
+            </div>
+
           </div>
+
         </div>
 
       </div>
 
     </div>
-
-  </div>
-
-</div>
   </div>
 
 </div>

@@ -1,51 +1,54 @@
-
-<div class="container"[class.fa-expand]='expanded'>
-  <div  class="text-center my-5">
-    <h2 >{{cartTotal > 0 ? "" : "No hay productos"}}</h2>
+<div class="container" [class.fa-expand]='expanded'>
+  <div class="text-center my-5">
+    <h2>{{cartTotal > 0 ? "" : "No hay productos"}}</h2>
+    <!-- Condicion en el caso de que no haya productos en el carrito -->
     <button class="btn btn-primary btn-lg mt-3" routerLink="/">Seguir Comprando</button>
   </div>
 
-  <ng-container >
+  <ng-container>
     <div class="row">
       <div class="col my-4">
         <table class="table">
           <thead class="table-dark">
-          <tr class="text-center">
-            <th></th>
-            <th>Nombre Producto</th>
-            <th>Precio Producto</th>
-            <th>Cantidad</th>
-            <th>Subtotal</th>
-          </tr>
+            <tr class="text-center">
+              <th></th> <!-- Cabecera de la tabla del producto -->
+              <th>Nombre Producto</th>
+              <th>Precio Producto</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let item of productos">
-            <td class="d-flex align-items-center justify-content-around" >
-              <img [src]="" alt="" height="60" class="order-1">
-              <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash" ></i></span>
-            </td>
-            <td><p>{{item["nombreProd"]}}</p></td>
-            <td>
-              <p>{{item["precio"] | currency:'USD'}}</p>
-            </td>
-            <td>
-              <form>
+            <tr *ngFor="let item of productos">
+              <td class="d-flex align-items-center justify-content-around">
+                <img [src]="" alt="" height="60" class="order-1">
+                <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash"></i></span>
+              </td>
+              <td>
+                <p>{{item["nombreProd"]}}</p> <!-- Donde se mostrara el nombre del producto -->
+              </td>
+              <td>
+                <p>{{item["precio"] | currency:'USD'}}</p> <!-- Donde se mostrara el precio del producto -->
+              </td>
+              <td>
+                <form>
 
-                <input type="number" id="number" [value]="item.cantidad" disabled/>
-              </form>
-            </td>
-            <td>
-              <p> {{ item["total"] | currency:'USD'}}</p>
-            </td>
-          </tr>
-          <tr class="border-0">
-            <td style="border: none;"></td>
-            <td></td>
-            <td></td>
-            <td>TOTAL</td>
-            <td>{{cartTotal | currency:'USD'}}</td>
+                  <input type="number" id="number" [value]="item.cantidad" disabled />
+                </form>
+              </td>
+              <td>
+                <p> {{ item["total"] | currency:'USD'}}</p>
+                <!-- Donde se mostrara el subtotal (precio * cantidad) del producto -->
+              </td>
+            </tr>
+            <tr class="border-0">
+              <td style="border: none;"></td>
+              <td></td>
+              <td></td>
+              <td>TOTAL</td>
+              <td>{{cartTotal | currency:'USD'}}</td> <!-- Donde se sumaran todos los subtotales -->
 
-          </tr>
+            </tr>
 
           </tbody>
         </table>
@@ -54,6 +57,7 @@
       </div>
 
       <div class="col-md-12 d-flex mb-5">
+        <!--Botones  -->
         <div class="d-flex w-100 justify-content-between flex-sm-column flex-md-row">
           <a routerLink="/chequeo" class="btn btn-danger btn-sm order-1">Checkout</a>
           <a routerLink="/" class="btn btn-success btn-sm order-0">Continuar Comprando</a>

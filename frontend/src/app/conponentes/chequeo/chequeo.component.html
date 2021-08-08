@@ -8,7 +8,7 @@
   <p style="font-size: 20px; color: black">Booking Order...</p>
 </ngx-spinner>-->
 
-<div class="section" >
+<div class="section">
   <!-- container -->
   <div class="container">
     <!-- row -->
@@ -18,13 +18,13 @@
         <!-- Billing Details -->
         <div class="billing-details">
           <div class="section-title">
-            <h3 class="title">Billing address</h3>
+            <h3 class="title">Datos personales</h3> <!-- Donde se mostrara los datos del usuario -->
           </div>
           <div class="form-group">
             <input class="input" type="text" name="first-name" placeholder="Cedula" [(ngModel)]="factura.usuario">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="last-name" placeholder="Nombre" >
+            <input class="input" type="text" name="last-name" placeholder="Nombre">
           </div>
           <div class="form-group">
             <input class="input" type="text" name="last-name" placeholder="Apellido">
@@ -40,10 +40,12 @@
               <input type="checkbox" id="create-account">
               <label for="create-account">
                 <span></span>
-                Crear Cuenta??
+                Crear Cuenta??<!-- En el caso que el usuario no tenga correo o no este registrado -->
               </label>
               <div class="caption">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <p>Correo</p>
+                <input class="input" type="email" name="email" placeholder="alguien@mini.com">
+                <p>Contraseña</p>
                 <input class="input" type="password" name="password" placeholder="Enter Your Password">
               </div>
             </div>
@@ -60,10 +62,10 @@
         </div>
         <div class="order-summary">
           <div class="order-col">
-            <div><strong>Producto</strong></div>
+            <div><strong>Producto</strong></div><!-- Donde se mostraran los datos del producto -->
             <div><strong>SubTotal</strong></div>
           </div>
-          <div class="order-products" >
+          <div class="order-products">
             <div class="order-col" *ngFor="let item of productos">
               <div>{{item.nombreProd}}</div>
               <div>{{item.total | currency:'USD'}}</div>
@@ -71,7 +73,7 @@
           </div>
           <div class="order-col dropdown-divider">
             <div><strong>TOTAL</strong></div>
-            <div><strong class="order-total"  [(ngModel)]="factura.total"> {{cartTotal| currency:'USD'}}</strong></div>
+            <div><strong class="order-total" [(ngModel)]="factura.total"> {{cartTotal| currency:'USD'}}</strong></div><!-- Donde se mostrara el total final -->
           </div>
         </div>
         <div class="input-checkbox">
@@ -81,7 +83,8 @@
             He leido y acepto los <a href="#">Terminos y Condiciones</a>
           </label>
         </div>
-        <button type="submit" class="btn-outline-danger btn-sm my-2 btn-block" [disabled]="  " (click)="registrarFactura()" >Terminar Orden</button>
+        <button type="submit" class="btn-outline-danger btn-sm my-2 btn-block" [disabled]="  "
+          (click)="registrarFactura()">Terminar Orden</button>
       </div>
       <!-- /Order Details -->
     </div>
@@ -91,7 +94,7 @@
 </div>
 <!-- /SECTION -->
 
-<div class="text-center my-5" >
-  
+<div class="text-center my-5">
+
   <button class="btn btn-primary btn-lg mt-3" routerLink="/">SEGUIR COMPRANDO</button>
 </div>

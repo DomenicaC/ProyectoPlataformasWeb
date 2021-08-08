@@ -27,14 +27,15 @@
     <div class="row d-flex">
       <!-- Product main img -->
       <div class="col-md-5 col-md-push-2">
-        <div >
+        <div>
 
+          <div class="product-preview">
+            <img [src]="producto.urlImg" alt="{{producto.nombre}}" width="200px" class="card-img-top"
+              style="cursor:pointer;">
+          </div>
+
+          <ng-template>
             <div class="product-preview">
-              <img [src]="producto.urlImg" alt="{{producto.nombre}}" width="200px" class="card-img-top"  style="cursor:pointer;">
-            </div>
-
-          <ng-template >
-            <div class="product-preview" >
 
             </div>
           </ng-template>
@@ -45,14 +46,14 @@
       <!-- Product thumb imgs -->
       <div class="col-md-2  col-md-pull-5 ">
 
-            <div  class="product-preview">
+        <div class="product-preview">
 
-            </div>
+        </div>
 
 
-            <div class="product-preview">
+        <div class="product-preview">
 
-            </div>
+        </div>
 
       </div>
       <!-- /Product thumb imgs -->
@@ -84,16 +85,13 @@
               <STRONG>Cantidad</STRONG>
               <div class="">
 
-                <input class="btn btn-outline-primary btn-sm btn-block" type="number"
-                       id="{{producto.codigo}}" [value]="0" [min]="1" [max]="producto.stock"/>
+                <input class="btn btn-outline-primary btn-sm btn-block" type="number" id="{{producto.codigo}}"
+                  [value]="0" [min]="1" [max]="producto.stock" />
               </div>
-            </div><br/><br/>
-            <button class="add-to-cart-btn"
-                    [class.disabled]="producto.stock < 1"
-                    [class.btn-outline-danger]="producto.stock < 1"
-                    [disabled]="producto.stock < 1"
-                    (click)="addCarrito(producto.codigo)"><i
-              class="fa fa-shopping-cart"></i>
+            </div><br /><br />
+            <button class="add-to-cart-btn" [class.disabled]="producto.stock < 1"
+              [class.btn-outline-danger]="producto.stock < 1" [disabled]="producto.stock < 1"
+              (click)="addCarrito(producto.codigo)"><i class="fa fa-shopping-cart"></i>
               {{ producto.stock < 1 ? "NO STOCK" : "Añadir al carrito"}}
             </button>
           </div>
@@ -123,4 +121,3 @@
   <!-- /container -->
 </div>
 <!-- /SECTION -->
-

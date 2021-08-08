@@ -3,21 +3,24 @@
     <div class="row">
       <div class="col-md-6 d-flex mx-auto flex-column">
         <div class="d-flex flex-column align-items-center justify-content-around">
-          <h1>Inicie Sesión</h1></div>
+          <h1>Inicie Sesión</h1>
+        </div>
         <form novalidate [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
           <div class="form-group">
             <label for="correo">Correo</label>
-            <input class="form-control" id="correo" type="email"  name="Correo" required formControlName="usuario">
+            <input class="form-control" id="correo" type="email" name="Correo" required formControlName="usuario">
           </div>
 
           <div class="form-group">
             <label for="contrasenia">Contraseña</label>
-            <input class="form-control" id="contrasenia" type="password"  name="contrasenia" required formControlName="contrasenia">
+            <input class="form-control" id="contrasenia" type="password" name="contrasenia" required
+              formControlName="contrasenia">
           </div>
           <div class="d-flex flex-column align-items-center justify-content-around">
-            <button class="btn btn-primary btn-sm btn-block" >Iniciar Sesión</button>
+            <button class="btn btn-primary btn-sm btn-block">Iniciar Sesión</button>
             <hr>
-          <a>¿Aun no tienes una cuenta? <br/> <a href="http://localhost:4200/registrar"><strong>Registrate Ahora</strong></a> </a>
+            <a>¿Aun no tienes una cuenta? <br /> <a href="http://localhost:4200/registrar"><strong>Registrate
+                  Ahora</strong></a> </a>
           </div>
         </form>
 

@@ -7,38 +7,39 @@
         <hr>
         <p>
 
-        
+          <!-- Pagina final donde se mostraran los productos que se hayan comprado 
+          despues de terminar con la factura -->
       </div>
 
       <table class="table table-striped">
         <thead>
-        <tr>
-          <th></th>
-          <th>Nombre Producto</th>
-          <th>Precio</th>
-          <th>Cantidad</th>
-        </tr>
+          <tr>
+            <th></th>
+            <th>Nombre Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+          </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let item of productos">
-          <td>
-           
-          </td>
-          <td>{{item.nombreProd}}</td>
-          <td>{{item.precio | currency:'USD'}}</td>
-          <td>{{item.cantidad}}</td>
-        </tr>
+          <tr *ngFor="let item of productos">
+            <td>
 
-        <tr class="border-0">
-          <td style="border: none;"></td>
-          <td></td>
-          <td>TOTAL</td>
-          <td>{{cartTotal | currency:'USD'}}</td>
+            </td>
+            <td>{{item.nombreProd}}</td>
+            <td>{{item.precio | currency:'USD'}}</td>
+            <td>{{item.cantidad}}</td>
+          </tr>
 
-        </tr>
+          <tr class="border-0">
+            <td style="border: none;"></td>
+            <td></td>
+            <td>TOTAL</td>
+            <td>{{cartTotal | currency:'USD'}}</td>
+
+          </tr>
         </tbody>
       </table>
-      <button class="btn btn-primary btn-lg mt-3"  ><a href="http://localhost:4200/">Seguir Comprando</a></button>
+      <button class="btn btn-primary btn-lg mt-3"><a href="http://localhost:4200/">Seguir Comprando</a></button>
     </div>
   </div>
 </div>
