@@ -16,6 +16,7 @@ import javax.ws.rs.core.MediaType;
 import ec.edu.ups.Mercado.bussines.ProductosON;
 import ec.edu.ups.Mercado.modelo.Producto;
 import ec.edu.ups.Mercado.ser.modelo.productoTemp;
+import ec.edu.ups.Mercado.ser.modelo.productoTemp2;
 
 @Path("/Produc")
 public class ProductosService {
@@ -76,6 +77,25 @@ public class ProductosService {
 		pt.setStock(p.getStock());
 		pt.setUrlImg(p.getUrlImg());
 		pt.setNombreCat(p.getCategorias().getCategoria());
+		return pt;
+
+	}
+	
+	@GET
+	@Path("/Producto") 
+	@Produces(MediaType.APPLICATION_JSON)   
+	public productoTemp2 getProducto(@QueryParam("cod") int cod) {
+
+		Producto p = productoON.getSingleProd(cod);
+		
+		productoTemp2 pt = new productoTemp2();
+		pt.setCodigo(cod);
+		pt.setNombre(p.getNombre());
+		pt.setDescripcion(p.getDescripcion());
+		pt.setPrecioU(p.getPrecioU());
+		pt.setStock(p.getStock());
+		pt.setUrlImg(p.getUrlImg());
+		pt.setCategoria(p.getCategorias());
 		return pt;
 
 	}

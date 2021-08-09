@@ -48,4 +48,8 @@ public class FacturaON {
 	public List<Producto> getProdCat() {
 		return productoDAO.getProdCat();
 	}
+	
+	public Factura numeroFactura() {
+		return facturaDAO.numerofactura();
+	}
 }

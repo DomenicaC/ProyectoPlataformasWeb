@@ -29,4 +29,19 @@ public class FacturaDAO {
 		return fac;
 	}
 	
+	public Factura numerofactura() {
+		
+		String jpq2 = "SELECT f FROM Factura f";
+
+		Query query = em.createQuery(jpq2, Factura.class);
+
+		List<Factura> fac = query.getResultList();
+		Factura f=new Factura();
+		for (int i=fac.size();true;i++) {
+			f=fac.get(i-1);
+			break;
+		}
+		return f;
+	}
+	
 }
