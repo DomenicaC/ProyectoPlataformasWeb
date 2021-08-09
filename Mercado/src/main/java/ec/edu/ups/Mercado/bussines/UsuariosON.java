@@ -32,13 +32,13 @@ public class UsuariosON {
 		return daousuario.getUsuarios("%");
 	}
 
-	public Usuario getUsuarioLoggin(String usuario,String contra) {
-		
+	public Usuario getUsuarioLoggin(String usuario, String contra) {
+
 		return daousuario.getLoggin(usuario, contra);
 	}
-	
+
 	public Usuario getUsuario(String cedula) {
 		return daousuario.read(cedula);
 	}
-	
+
 }

@@ -48,8 +48,9 @@ export class CarritoComponent implements OnInit {
 
     let codigoP = this.activateRoute.snapshot.paramMap.get('codigo')
     console.log(codigoP)*/
-
-    console.log(localStorage.length);
+    //console.log(localStorage.length);
+    this.productos=[]
+    this.cartTotal=0;
     for(var i=0;i<localStorage.length;i++){
       var p=JSON.parse(localStorage.getItem(''+i) || '{}');
       this.cartTotal=this.cartTotal+p["total"];
@@ -62,8 +63,11 @@ export class CarritoComponent implements OnInit {
     //localStorage.clear();
   }
 
-  eliminarProd(producto: Producto){
-    this.carritoService.eliminarProducto(producto);
+  eliminarProd(codigo: number){
+    console.log(codigo)
+    this.carritoService.eliminarProducto(codigo);
+    this.ngOnInit();
+    
   }
   onCartClick() {
     this.expanded = !this.expanded;

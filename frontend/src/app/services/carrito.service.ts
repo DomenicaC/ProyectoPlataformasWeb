@@ -10,6 +10,7 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 import { Carrito } from '../domain/carrito';
 import { MatDialog } from "@angular/material/dialog";
 import { MensajeComponent } from "../conponentes/mensaje/mensaje.component";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,7 @@ export class CarritoService {
   private server_URL = environment.server_URL;
 
   constructor(private  http: HttpClient,
+              private router: Router,
               private productoService:ProductoService,
               private matDialog: MatDialog) { }
 
@@ -101,17 +103,49 @@ export class CarritoService {
 
   }
 
-  eliminarProducto(producto: Producto){
+  eliminarProducto(codigo: number){
 
-    this.productos = this.productos.filter(_producto => {
-      if (_producto.producto.productos === producto.codigo) {
-        this.totalCarrito -= _producto.producto.precioU * _producto.cantidad;
-        return false;
+    this.productos=[];
+    for(var i=0;i<localStorage.length;i++){
+      var p=JSON.parse(localStorage.getItem(''+i) || '{}');
+      //console.log(p)
+      if(p['productos']!=codigo){
+        this.productos.push(p);
       }
-      return true;
-    });
 
-    this.productAddedSource.next({productos: this.productos, totalCarrito: this.totalCarrito});
+    }
+
+    localStorage.clear();
+    
+    for(let item of this.productos){
+      console.log(item)
+      var n= localStorage.length;
+      var s=""+n;
+      localStorage.setItem(s,JSON.stringify(item));
+    }
+
+    
+
+    // var n= localStorage.length;
+    // var s=""+n;
+    // for(var j=0;j<this.productos.length;j++){
+    //   localStorage.setItem(s,JSON.stringify(this.productos.indexOf(j)));
+    // }
+
+
+
+
+
+
+    // this.productos = this.productos.filter(_producto => {
+    //   if (_producto.producto.productos === producto.codigo) {
+    //     this.totalCarrito -= _producto.producto.precioU * _producto.cantidad;
+    //     return false;
+    //   }
+    //   return true;
+    // });
+
+    // this.productAddedSource.next({productos: this.productos, totalCarrito: this.totalCarrito});
 
   }
 

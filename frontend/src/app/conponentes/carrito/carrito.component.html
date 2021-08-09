@@ -22,7 +22,7 @@
             <tr *ngFor="let item of productos">
               <td class="d-flex align-items-center justify-content-around">
                 <img [src]="" alt="" height="60" class="order-1">
-                <span class="text-danger" style="cursor: pointer;"><i class="fa fa-trash"></i></span>
+                <span class="text-danger" style="cursor: pointer;" (click)="eliminarProd(item.productos)"><i class="fa fa-trash"></i></span>
               </td>
               <td>
                 <p>{{item["nombreProd"]}}</p> <!-- Donde se mostrara el nombre del producto -->
