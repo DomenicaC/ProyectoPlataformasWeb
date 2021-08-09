@@ -6,5 +6,5 @@ export  class Registro {
   contrasenia: String = '';
   telefono: String = '';
   direccion: String = '';
-  rol: String = '';
+  rol: String = "3";
 }

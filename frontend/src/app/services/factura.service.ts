@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Carrito } from '../domain/carrito';
 import { Factura } from '../domain/factura';
+import { Registro } from '../domain/registro';
+import { ResponseI } from '../Modelos/login/response.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,12 @@ export class FacturaService {
   ingresarCarrito(carrito:Carrito): Observable<any>{
     const url=this.server_URL+"/Factura/RegistroCarrito";
     return this.http.put(url,carrito);
+  }
+
+  getCliente(cedula:String): Observable<Registro>{
+    const url=this.server_URL+"/Clientes/getcliente/"+cedula;
+
+    return this.http.post<Registro>(url,cedula)
   }
 
 }

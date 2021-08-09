@@ -30,8 +30,21 @@ export class ChequeoComponent implements OnInit {
  
   } 
 
+  llenarUsuario(){
+    console.log(this.factura.usuario.cedula);
+    this.facturaServices.getCliente(this.factura.usuario.cedula).subscribe(data =>{
+      console.log(data);
+      this.factura.usuario=data;
+    });
+  }
+
   registrarFactura(){
      console.log(this.factura);
+
+     this.factura.total=this.cartTotal;
+     this.factura.iva=this.cartTotal*0.12;
+     this.factura.subtotal=this.cartTotal-this.factura.iva;
+
     this.facturaServices.ingrearFactura(this.factura).subscribe(data =>{
     console.log("datos=> "+data);
   });

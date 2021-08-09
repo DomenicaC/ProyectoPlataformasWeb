@@ -21,19 +21,19 @@
             <h3 class="title">Datos personales</h3> <!-- Donde se mostrara los datos del usuario -->
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="first-name" placeholder="Cedula" [(ngModel)]="factura.usuario">
+            <input class="input" type="text" name="first-name" placeholder="Cedula" [(ngModel)]="factura.usuario.cedula" (keyup.enter)="llenarUsuario()">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="last-name" placeholder="Nombre">
+            <input class="input" type="text" name="last-name" placeholder="Nombre" [(ngModel)]="factura.usuario.nombre">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="last-name" placeholder="Apellido">
+            <input class="input" type="text" name="last-name" placeholder="Apellido" [(ngModel)]="factura.usuario.apellido">
           </div>
           <div class="form-group">
-            <input class="input" type="text" name="address" placeholder="Direccion">
+            <input class="input" type="text" name="address" placeholder="Direccion" [(ngModel)]="factura.usuario.direccion">
           </div>
           <div class="form-group">
-            <input class="input" type="tel" name="tel" placeholder="Telefono">
+            <input class="input" type="tel" name="tel" placeholder="Telefono" [(ngModel)]="factura.usuario.telefono">
           </div>
           <div class="form-group">
             <div class="input-checkbox">
