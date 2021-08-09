@@ -50,9 +50,9 @@ export class ChequeoComponent implements OnInit {
      this.factura.iva=this.cartTotal*0.12;
      this.factura.subtotal=this.cartTotal-this.factura.iva;
 
-  //    this.facturaServices.ingrearFactura(this.factura).subscribe(data =>{
-  //    //console.log("datos=> "+data);
-  //  });
+      this.facturaServices.ingrearFactura(this.factura).subscribe(data =>{
+      //console.log("datos=> "+data);
+    });
 
     for(var i=0;i<localStorage.length;i++){
       this.carrito=JSON.parse(localStorage.getItem(''+i) || '{}')
