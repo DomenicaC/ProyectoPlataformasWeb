@@ -37,5 +37,8 @@ public class UsuariosON {
 		return daousuario.getLoggin(usuario, contra);
 	}
 	
+	public Usuario getUsuario(String cedula) {
+		return daousuario.read(cedula);
+	}
 	
 }

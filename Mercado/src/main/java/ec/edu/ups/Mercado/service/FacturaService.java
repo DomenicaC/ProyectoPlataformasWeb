@@ -27,6 +27,7 @@ public class FacturaService {
 	public String registrarFactura(Factura f) {
 		
 		try {
+			System.out.println(f.toString());
 			facturaON.ingresarFactura(f);
 			return "Ok";
 		} catch (Exception e) {

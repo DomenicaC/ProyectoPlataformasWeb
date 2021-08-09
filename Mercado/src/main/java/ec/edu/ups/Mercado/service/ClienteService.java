@@ -11,6 +11,7 @@ import javax.ws.rs.core.MediaType;
 
 import ec.edu.ups.Mercado.bussines.UsuariosON;
 import ec.edu.ups.Mercado.modelo.Usuario;
+import ec.edu.ups.Mercado.ser.modelo.ClienteTemp;
 
 @Path("/Clientes")
 public class ClienteService {
@@ -56,6 +57,25 @@ public class ClienteService {
 			return msj;
 		}
 
+	}
+	
+	@POST
+	@Path("/getcliente/{cedula}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public ClienteTemp getUsuario(@PathParam("cedula") String cedula) {
+		
+		Usuario u=usuarioON.getUsuario(cedula);
+		ClienteTemp ct=new ClienteTemp();
+		ct.setApellido(u.getApellido());
+		ct.setCedula(cedula);
+		ct.setContrasenia(u.getContrasenia());
+		ct.setCorreo(u.getCorreo());
+		ct.setDireccion(u.getDireccion());
+		ct.setNombre(u.getNombre());
+		ct.setRol(3);
+		ct.setTelefono(u.getTelefono());
+		
+		return ct;
 	}
 	
 	/*@POST

@@ -1,5 +1,6 @@
 package ec.edu.ups.Mercado.modelo;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Usuario {
+public class Usuario implements Serializable{
 
 	@Id
 	private String cedula;
@@ -104,6 +105,13 @@ public class Usuario {
 		this.facturas = facturas;
 	}
 
+	@Override
+	public String toString() {
+		return "Usuario [cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo
+				+ ", contrasenia=" + contrasenia + ", direccion=" + direccion + ", telefono=" + telefono + ", rol="
+				+ rol + ", facturas=" + facturas + ", factProv=" + factProv + "]";
+	}
+
 	/*public List<FacProv> getFactProv() {
 		return factProv;
 	}
@@ -111,5 +119,6 @@ public class Usuario {
 	public void setFactProv(List<FacProv> factProv) {
 		this.factProv = factProv;
 	}*/
+	
 	
 }

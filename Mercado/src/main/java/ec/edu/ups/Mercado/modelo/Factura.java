@@ -99,4 +99,11 @@ public class Factura {
 		carritos.add(carrito);
 	}
 
+	@Override
+	public String toString() {
+		return "Factura [ruc=" + ruc + ", fecha=" + fecha + ", subtotal=" + subtotal + ", iva=" + iva + ", total="
+				+ total + ", usuario=" + usuario + ", carritos=" + carritos + "]";
+	}
+
+	
 }
