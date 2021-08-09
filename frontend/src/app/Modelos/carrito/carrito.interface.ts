@@ -1,3 +1,5 @@
+import { Factura } from "src/app/domain/factura";
+
 export interface CarritoI {
   codigo: number;
   productos: number;
@@ -5,6 +7,6 @@ export interface CarritoI {
   cantidad: number;
   precio: number;
   total: number;
-  factura: number;
+  factura: Factura;
   stock:number;
 }

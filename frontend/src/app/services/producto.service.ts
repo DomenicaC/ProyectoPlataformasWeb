@@ -31,6 +31,15 @@ export class ProductoService {
     console.log("Producto Obtenido")
   }
   /*----------------------------------------------------------------------------------*/
+  getProductoCompleto(codigo:any): Observable<ProductoI>{
+
+    let url = this.server_URL + '/Produc/Producto?cod='+codigo;
+    return this.http.get<ProductoI>(url);
+    console.log("Producto Obtenido")
+  }
+  /*----------------------------------------------------------------------------------*/
+
+  
   getCat1Prod(): Observable<any> {
     const url = environment.server_URL + '/Produc/catLacteos';
     return this.http.get(url)
