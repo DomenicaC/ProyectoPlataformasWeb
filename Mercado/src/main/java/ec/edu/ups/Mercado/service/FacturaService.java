@@ -59,6 +59,10 @@ public class FacturaService {
 			ca.setProductos(p);
 			ca.setFactura(facturaON.numeroFactura());
 			carritoON.registrarCarrito(ca);
+			p.setStock(p.getStock()-ca.getCantidad());
+			
+			productosON.actualizarProd(p);
+			
 			return "Ok";
 		} catch (Exception e) {
 			return "Error";
