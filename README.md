@@ -3,4 +3,4 @@ Desarrollo de un sistema de información
 
 Diagrama de clases
 
-![diagrama](https://user-images.githubusercontent.com/49033368/128793203-0544dbad-ddf3-47f9-908f-d3ad8cb45576.jpeg)
+![image](https://user-images.githubusercontent.com/49033368/128893178-a250be42-6b79-4fbf-ac49-05f92e269cc2.png)
